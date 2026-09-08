@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import vid from "../videos/into2.mp4";
+import vid from "../videos/intro.mp4";
 
 function IntroVideo({ onComplete }) {
   const overlayRef = useRef(null);
@@ -60,6 +60,8 @@ function IntroVideo({ onComplete }) {
       }
 
       video.currentTime = 0;
+      video.muted='false'
+      video.play();
 
       video.play().catch((error) => {
         console.error("Video playback failed:", error);
@@ -105,7 +107,7 @@ function IntroVideo({ onComplete }) {
       <video
         ref={videoRef}
         src={vid}
-        muted
+        // muted
         playsInline
         preload="auto"
         className="h-full w-full object-contain"
