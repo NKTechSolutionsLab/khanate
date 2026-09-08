@@ -28,7 +28,7 @@ function BridgeEurope() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <div className="flex items-center gap-4">
-              <span className="text-[8px] font-semibold uppercase tracking-[0.2em]">
+              <span className="text-[12px] font-semibold uppercase tracking-[0.2em]">
                 BRIDGEEUROPE™
               </span>
 
@@ -41,7 +41,7 @@ function BridgeEurope() {
               to Europe.
             </h2>
 
-            <p className="mt-6 max-w-100 text-[11px] leading-[1.7] text-[#191113]/70 sm:text-[12px]">
+            <p className="mt-6 max-w-100 text-[15px] leading-[1.7] text-[#191113]/70 sm:text-[12px]">
               A strategic market-access platform within the KHĀNATE
               ecosystem, connecting international capital and
               businesses with opportunity across Europe.
@@ -49,7 +49,7 @@ function BridgeEurope() {
 
             <a
               href="#private-access"
-              className="group mt-7 inline-flex items-center gap-4 text-[8px] font-bold uppercase tracking-[0.18em]"
+              className="group mt-7 inline-flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.18em]"
             >
               EXPLORE BRIDGEEUROPE™
               <span className="text-[15px] font-light transition-transform duration-300 group-hover:translate-x-1">
@@ -68,11 +68,11 @@ function BridgeEurope() {
                   {item.number}
                 </span>
 
-                <h3 className="mt-5 text-[9px] font-bold uppercase tracking-[0.2em]">
+                <h3 className="mt-5 text-[12px] font-bold uppercase tracking-[0.2em]">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-[10px] leading-[1.6] text-[#191113]/65">
+                <p className="mt-4 text-[11px] leading-[1.6] text-[#191113]/65">
                   {item.text}
                 </p>
               </article>

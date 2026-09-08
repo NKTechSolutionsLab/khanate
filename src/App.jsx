@@ -3,7 +3,7 @@ import IntroVideo from "./components/IntroVideo";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import { Focus } from "lucide-react";
+import Focus from "./components/Focus";
 import BridgeEurope from "./components/BridgeEurope";
 import Opportunities from "./components/Opportunities";
 import Insights from "./components/Insights";
@@ -24,7 +24,7 @@ function App() {
       <Nav animate={introComplete} />
       <Hero animate={introComplete} />
       <About />
-      <Focus />
+      <Focus/>
       {/* <HowWeWork />
       <Europe /> */}
       <BridgeEurope />

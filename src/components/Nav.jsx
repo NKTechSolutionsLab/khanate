@@ -21,7 +21,7 @@ const navItems = [
   },
   {
     label: "INSIGHTS",
-    href: "#insights",
+    href: "#insights", 
   },
 ];
 
@@ -99,7 +99,7 @@ function Nav({ animate }) {
           <img
             src={logo}
             alt="KHĀNATE"
-            className="h-21 w-51.25 max-w-none object-cover object-center"
+            className="h-21 w-56 max-w-none object-cover object-center"
           />
         </a>
 

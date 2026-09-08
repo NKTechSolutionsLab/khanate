@@ -8,7 +8,7 @@ function Legal() {
               KHĀNATE
             </div>
 
-            <p className="mt-2 text-[6px] font-semibold uppercase tracking-[0.2em] text-[#817173]">
+            <p className="mt-2 text-[8px] font-semibold uppercase tracking-[0.2em] text-[#817173]">
               CAPITAL · CONNECTIONS · OPPORTUNITY
             </p>
           </div>
@@ -37,13 +37,13 @@ function Legal() {
           </div>
 
           <div className="lg:text-right">
-            <p className="text-[7px] uppercase tracking-[0.18em] text-[#B79A69]">
+            <p className="text-[8px] uppercase tracking-[0.18em] text-[#B79A69]">
               A MORE CONNECTED
               <br />
               TOMORROW.
             </p>
 
-            <p className="mt-5 text-[6px] uppercase tracking-[0.15em] text-[#817173]">
+            <p className="mt-5 text-[8px] uppercase tracking-[0.15em] text-[#817173]">
               © 2026 KHĀNATE. ALL RIGHTS RESERVED.
             </p>
           </div>

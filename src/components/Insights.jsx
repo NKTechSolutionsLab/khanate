@@ -1,17 +1,22 @@
-import heroBg from "../images/hero_bg.png";
+import eumarket from "../images/market.png";
+import strategy from "../images/strategy.png";
+import geo from "../images/geo.png";
 
 const insights = [
   {
     title: "Europe Beyond the Headline",
     category: "MARKETS",
+    img: eumarket,
   },
   {
     title: "Why Strategic Access Matters",
     category: "STRATEGY",
+    img: strategy,
   },
   {
     title: "Riga and the Northern Corridor",
     category: "GEOGRAPHY",
+    img: geo,
   },
 ];
 
@@ -19,13 +24,13 @@ function Insights() {
   return (
     <section
       id="insights"
-      className="bg-[#F5EEE7] text-[#191113]"
+      className="overflow-hidden bg-[#F5EEE7] text-[#191113]"
     >
       <div className="mx-auto max-w-360 px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
           <div>
             <div className="flex items-center gap-4">
-              <span className="text-[8px] font-semibold uppercase tracking-[0.2em]">
+              <span className="text-[12px] font-semibold uppercase tracking-[0.2em]">
                 INSIGHTS
               </span>
 
@@ -38,14 +43,14 @@ function Insights() {
               Before Position.
             </h2>
 
-            <p className="mt-6 max-w-90 text-[11px] leading-[1.65] text-[#191113]/65 sm:text-[12px]">
-              Thoughts, analysis and perspectives on capital,
-              markets and opportunity across Europe.
+            <p className="mt-6 max-w-90 text-[12px] leading-[1.65] text-[#191113]/65 sm:text-[13px]">
+              Thoughts, analysis and perspectives on capital, markets and
+              opportunity across Europe.
             </p>
 
             <a
               href="#private-access"
-              className="group mt-7 inline-flex items-center gap-4 text-[8px] font-bold uppercase tracking-[0.18em]"
+              className="group mt-7 inline-flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.18em]"
             >
               EXPLORE INSIGHTS
               <span className="text-[15px] font-light transition-transform duration-300 group-hover:translate-x-1">
@@ -61,13 +66,13 @@ function Insights() {
                 className="group relative min-h-55 overflow-hidden sm:min-h-65"
               >
                 <img
-                  src={heroBg}
+                  src={item.img}
                   alt=""
                   aria-hidden="true"
                   className="absolute inset-0 h-full w-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-[#130207]/60 transition-opacity duration-300 group-hover:bg-[#130207]/45" />
+                <div className="absolute inset-0 bg-[#130207]/60 transition-colors duration-300 group-hover:bg-[#130207]/45" />
 
                 <div className="relative flex h-full flex-col justify-end p-5 text-[#F5EEE7]">
                   <h3 className="max-w-45 font-serif text-[1.3rem] leading-[1]">
@@ -75,11 +80,11 @@ function Insights() {
                   </h3>
 
                   <div className="mt-5 flex items-center justify-between">
-                    <span className="text-[6px] font-bold uppercase tracking-[0.2em] text-[#D8BF8E]">
+                    <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#D8BF8E]">
                       {item.category}
                     </span>
 
-                    <span className="text-[14px] font-light transition-transform duration-300 group-hover:translate-x-1">
+                    <span className="text-[18px] font-light transition-transform duration-300 group-hover:translate-x-1">
                       →
                     </span>
                   </div>

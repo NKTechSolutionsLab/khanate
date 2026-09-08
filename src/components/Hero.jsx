@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import heroBg from "../images/hero_bg.png";
+import heroBgSm from "../images/hero_bg_sm2.png";
 
 function Hero({ animate }) {
   const heroRef = useRef(null);
@@ -59,8 +60,8 @@ function Hero({ animate }) {
       {
         opacity: 1,
         y: 0,
-        duration: 1,
-        ease: "power3.out",
+        duration: 1.5,
+        ease: "power2.out",
       },
       "-=0.5"
     );
@@ -73,7 +74,7 @@ function Hero({ animate }) {
       {
         opacity: 1,
         y: 0,
-        duration: 0.75,
+        duration: 0.8,
         ease: "power3.out",
       },
       "-=0.6"
@@ -87,7 +88,7 @@ function Hero({ animate }) {
       {
         opacity: 1,
         y: 0,
-        duration: 0.75,
+        duration: 0.8,
         ease: "power3.out",
       },
       "-=0.45"
@@ -101,7 +102,7 @@ function Hero({ animate }) {
       {
         opacity: 1,
         y: 0,
-        duration: 0.65,
+        duration: 0.7,
         ease: "power3.out",
       },
       "-=0.4"
@@ -134,20 +135,27 @@ function Hero({ animate }) {
     >
       {/* Background */}
       <div className="hero-background absolute inset-0 scale-[1.035] opacity-0">
-        <img
-          src={heroBg}
-          alt=""
-          aria-hidden="true"
-          className="
-            absolute inset-0
-            h-full w-full
-            object-cover
-            object-[57%_center]
-            sm:object-[56%_center]
-            lg:object-[55%_center]
-            xl:object-[54%_center]
-          "
-        />
+        <picture>
+  <source
+    media="(max-width: 640px)"
+    srcSet={heroBgSm}
+  />
+
+  <img
+    src={heroBg}
+    alt=""
+    aria-hidden="true"
+    className="
+      absolute inset-0
+      h-full w-full
+      object-cover
+      object-[57%_center]
+      sm:object-[56%_center]
+      lg:object-[55%_center]
+      xl:object-[54%_center]
+    "
+  />
+</picture>
 
         <div
           className="
