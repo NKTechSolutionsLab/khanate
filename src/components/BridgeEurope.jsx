@@ -1,3 +1,9 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const bridgeItems = [
   {
     number: "01",
@@ -17,8 +23,98 @@ const bridgeItems = [
 ];
 
 function BridgeEurope() {
+  const sectionRef = useRef(null);
+  const contentRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const content = contentRef.current;
+    const cards = cardsRef.current;
+
+    if (!section || !content || !cards.length) return;
+
+    const ctx = gsap.context(() => {
+      const eyebrow = content.querySelector(".bridge-eyebrow");
+      const heading = content.querySelector(".bridge-heading");
+      const paragraph = content.querySelector(".bridge-paragraph");
+      const link = content.querySelector(".bridge-link");
+
+      // Initial states
+      gsap.set([eyebrow, heading, paragraph, link], {
+        opacity: 0,
+        y: 25,
+      });
+
+      gsap.set(cards, {
+        opacity: 0,
+        y: 30,
+      });
+
+      // Animation timeline
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top 75%",
+          once: true,
+        },
+      });
+
+      tl.to(eyebrow, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      })
+        .to(
+          heading,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: "power3.out",
+          },
+          "-=0.35"
+        )
+        .to(
+          paragraph,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            ease: "power2.out",
+          },
+          "-=0.5"
+        )
+        .to(
+          link,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power2.out",
+          },
+          "-=0.35"
+        )
+        .to(
+          cards,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: "power3.out",
+          },
+          "-=0.35"
+        );
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="bridge2europe"
       className="relative overflow-hidden bg-[#DED0C7] text-[#191113]"
     >
@@ -26,8 +122,11 @@ function BridgeEurope() {
 
       <div className="relative mx-auto max-w-360 px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <div className="flex items-center gap-4">
+
+          {/* Left Content */}
+          <div ref={contentRef}>
+            {/* Eyebrow */}
+            <div className="bridge-eyebrow flex items-center gap-4">
               <span className="text-[12px] font-semibold uppercase tracking-[0.2em]">
                 BRIDGEEUROPE™
               </span>
@@ -35,49 +134,111 @@ function BridgeEurope() {
               <span className="h-px w-10 bg-[#B79A69]" />
             </div>
 
-            <h2 className="mt-7 max-w-100 font-serif text-[2.8rem] font-medium leading-[0.92] tracking-tight sm:text-[3.5rem]">
+            {/* Heading */}
+            <h2
+              className="
+                bridge-heading
+                mt-7
+                max-w-100
+                font-serif
+                text-[2.8rem]
+                font-medium
+                leading-[0.92]
+                tracking-tight
+                sm:text-[3.5rem]
+              "
+            >
               Your Gateway
               <br />
               to Europe.
             </h2>
 
-            <p className="mt-6 max-w-100 text-[15px] leading-[1.7] text-[#191113]/70 sm:text-[12px]">
+            {/* Description */}
+            <p
+              className="
+                bridge-paragraph
+                mt-6
+                max-w-100
+                text-[15px]
+                leading-[1.7]
+                text-[#191113]/70
+                sm:text-[12px]
+              "
+            >
               A strategic market-access platform within the KHĀNATE
               ecosystem, connecting international capital and
               businesses with opportunity across Europe.
             </p>
 
+            {/* CTA */}
             <a
               href="#private-access"
-              className="group mt-7 inline-flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.18em]"
+              className="
+                bridge-link
+                group
+                mt-7
+                inline-flex
+                items-center
+                gap-4
+                text-[10px]
+                font-bold
+                uppercase
+                tracking-[0.18em]
+              "
             >
               EXPLORE BRIDGEEUROPE™
-              <span className="text-[15px] font-light transition-transform duration-300 group-hover:translate-x-1">
+
+              <span
+                className="
+                  text-[15px]
+                  font-light
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              >
                 →
               </span>
             </a>
           </div>
 
+          {/* Bridge Steps */}
           <div className="grid border border-[#191113]/10 sm:grid-cols-3">
-            {bridgeItems.map((item) => (
+            {bridgeItems.map((item, index) => (
               <article
                 key={item.number}
-                className="group min-h-45 border-b border-[#191113]/10 p-6 transition-colors duration-300 hover:bg-[#F5EEE7]/45 sm:border-b-0 sm:border-r last:border-r-0"
+                ref={(el) => {
+                  cardsRef.current[index] = el;
+                }}
+                className="
+                  group
+                  min-h-45
+                  border-b
+                  border-[#191113]/10
+                  p-6
+                  transition-colors
+                  duration-300
+                  hover:bg-[#F5EEE7]/45
+                  sm:border-b-0
+                  sm:border-r
+                  last:border-r-0
+                "
               >
-                <span className="text-[7px] font-semibold tracking-[0.2em] text-[#B79A69]">
+                <span className="text-[9px] font-semibold tracking-[0.2em] text-[#B79A69]">
                   {item.number}
                 </span>
 
-                <h3 className="mt-5 text-[12px] font-bold uppercase tracking-[0.2em]">
+                <h3 className="mt-5 text-[14px] font-bold uppercase tracking-[0.2em]">
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-[11px] leading-[1.6] text-[#191113]/65">
+                <p className="mt-4 text-[13px] leading-[1.6] text-[#191113]/65">
                   {item.text}
                 </p>
               </article>
             ))}
           </div>
+
         </div>
       </div>
     </section>

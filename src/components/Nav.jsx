@@ -87,7 +87,7 @@ function Nav({ animate }) {
       ref={navRef}
       className="absolute inset-x-0 top-0 z-50 w-full"
     >
-      <nav className="mx-auto flex w-full max-w-360 items-center justify-between px-6 py-4 sm:px-8 lg:px-10 xl:px-12">
+      <nav className="mx-auto flex w-full max-w-360 items-center justify-between px-6 md:py-4 sm:px-8 lg:px-10 xl:px-12">
 
         {/* Logo */}
         <a

@@ -1,3 +1,9 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const focusItems = [
   {
     number: "01",
@@ -48,8 +54,46 @@ const Arrow = () => (
 );
 
 export default function Focus() {
+  const sectionRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const cards = cardsRef.current;
+
+    if (!section || !cards.length) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cards,
+        {
+          opacity: 0,
+          y: 30,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.75,
+          delay:0.5,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 75%",
+            once: true,
+          },
+        }
+      );
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="bg-[#260506] text-[#f2e9df]">
+    <section
+      ref={sectionRef}
+      className="bg-[#260506] text-[#f2e9df]"
+    >
       <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
 
         {/* Section Header */}
@@ -66,6 +110,9 @@ export default function Focus() {
           {focusItems.map((item, index) => (
             <article
               key={item.number}
+              ref={(el) => {
+                cardsRef.current[index] = el;
+              }}
               className={`
                 group
                 min-h-[220px]

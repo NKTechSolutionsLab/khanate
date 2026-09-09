@@ -1,9 +1,50 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import img from "../images/shehzad2.png";
 
+gsap.registerPlugin(ScrollTrigger);
 
 function Principal() {
+  const sectionRef = useRef(null);
+  const contentRef = useRef(null);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const content = contentRef.current;
+    const image = imageRef.current;
+
+    if (!section || !content || !image) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        content,
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 75%",
+            once: true,
+          },
+        }
+      );
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="principal"
       className="bg-[#F5EEE7] text-[#191113]"
     >
@@ -13,11 +54,20 @@ function Principal() {
           {/* =========================
               PRINCIPAL PORTRAIT
           ========================== */}
-          <div className="relative min-h-100 overflow-hidden bg-[#DED0C7] sm:min-h-125">
+          <div
+            ref={imageRef}
+            className="group relative min-h-100 overflow-hidden bg-[#DED0C7] sm:min-h-125"
+          >
             <img
               src={img}
               alt="Founder and Principal of KHĀNATE"
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="
+                absolute inset-0
+                h-full w-full
+                object-cover object-center
+                transition-transform duration-1000 ease-out
+                group-hover:scale-[1.035]
+              "
             />
 
             {/* Editorial Overlay */}
@@ -35,7 +85,7 @@ function Principal() {
           {/* =========================
               FOUNDER CONTENT
           ========================== */}
-          <div>
+          <div ref={contentRef}>
 
             {/* Label */}
             <div className="flex items-center gap-4">
@@ -47,18 +97,7 @@ function Principal() {
             </div>
 
             {/* Main Heading */}
-            <h2
-              className="
-                mt-7
-                max-w-110
-                font-serif
-                text-[3rem]
-                font-medium
-                leading-[0.92]
-                tracking-tight
-                sm:text-[3.7rem]
-              "
-            >
+            <h2 className="mt-7 max-w-110 font-serif text-[3rem] font-medium leading-[0.92] tracking-tight sm:text-[3.7rem]">
               Relationships
               <br />
               Begin With Trust.

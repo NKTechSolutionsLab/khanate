@@ -187,11 +187,11 @@ function Hero({ animate }) {
           items-center
           px-6
           pb-16
-          pt-24
+          
           sm:px-8
           lg:px-10
           lg:pb-10
-          lg:pt-16
+          pt-20
           xl:px-12
         "
       >
