@@ -6,7 +6,6 @@ function IntroVideo({ onComplete }) {
   const overlayRef = useRef(null);
   const videoRef = useRef(null);
   const completedRef = useRef(false);
-  const durationCallRef = useRef(null);
 
   useEffect(() => {
     const overlay = overlayRef.current;
@@ -21,6 +20,7 @@ function IntroVideo({ onComplete }) {
         display: "none",
       });
 
+      onComplete?.();
       return;
     }
 
@@ -29,11 +29,10 @@ function IntroVideo({ onComplete }) {
 
       completedRef.current = true;
 
-      if (durationCallRef.current) {
-        durationCallRef.current.kill();
-      }
-
-      const timeline = gsap.timeline({
+      gsap.to(overlay, {
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.inOut",
         onComplete: () => {
           sessionStorage.setItem("khanate-intro", "true");
 
@@ -41,57 +40,64 @@ function IntroVideo({ onComplete }) {
             display: "none",
           });
 
-          onComplete();
+          onComplete?.();
         },
       });
-
-      timeline.to(overlay, {
-        opacity: 0,
-        duration: 1,
-        ease: "power2.inOut",
-      });
     };
 
-    const handleMetadata = () => {
-      const duration = video.duration;
+    const handleEnded = () => {
+      finishIntro();
+    };
 
-      if (!Number.isFinite(duration) || duration <= 0) {
-        return;
+    const startVideo = async () => {
+      try {
+        video.muted = true;
+        video.playsInline = true;
+        video.currentTime = 0;
+
+        await video.play();
+
+        console.log("KHĀNATE intro started");
+      } catch (error) {
+        console.error("KHĀNATE intro playback failed:", error);
+
+        const playAfterInteraction = async () => {
+          try {
+            video.muted = false;
+            await video.play();
+          } catch (err) {
+            console.error("Playback still blocked:", err);
+            finishIntro();
+          }
+        };
+
+        window.addEventListener("click", playAfterInteraction, {
+          once: true,
+        });
+
+        window.addEventListener("touchstart", playAfterInteraction, {
+          once: true,
+        });
+
+        window.addEventListener("keydown", playAfterInteraction, {
+          once: true,
+        });
       }
-
-      video.currentTime = 0;
-      video.muted='false'
-      video.play();
-
-      video.play().catch((error) => {
-        console.error("Video playback failed:", error);
-        finishIntro();
-      });
-
-      durationCallRef.current = gsap.delayedCall(
-        duration,
-        finishIntro
-      );
     };
 
-    video.addEventListener(
-      "loadedmetadata",
-      handleMetadata
-    );
+    video.addEventListener("ended", handleEnded);
 
-    if (video.readyState >= 1) {
-      handleMetadata();
+    if (video.readyState >= 2) {
+      startVideo();
+    } else {
+      video.addEventListener("canplay", startVideo, {
+        once: true,
+      });
     }
 
     return () => {
-      video.removeEventListener(
-        "loadedmetadata",
-        handleMetadata
-      );
-
-      if (durationCallRef.current) {
-        durationCallRef.current.kill();
-      }
+      video.removeEventListener("ended", handleEnded);
+      video.removeEventListener("canplay", startVideo);
     };
   }, [onComplete]);
 
@@ -102,15 +108,37 @@ function IntroVideo({ onComplete }) {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-100 flex items-center justify-center overflow-hidden bg-[#130207]"
+      className="
+        fixed
+        inset-0
+        z-[9999]
+        flex
+        h-[100dvh]
+        w-screen
+        items-center
+        justify-center
+        overflow-hidden
+        bg-[#130207]
+      "
     >
       <video
         ref={videoRef}
         src={vid}
-        // muted
+        autoPlay
+        muted
         playsInline
         preload="auto"
-        className="h-full w-full object-contain"
+        controls={false}
+        disablePictureInPicture
+        className="
+          h-auto
+          w-full
+          max-h-full
+          object-contain
+          md:h-full
+          md:w-full
+          md:object-cover
+        "
       />
     </div>
   );
