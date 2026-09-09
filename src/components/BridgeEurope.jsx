@@ -42,6 +42,7 @@ function BridgeEurope() {
       const paragraph = content.querySelector(".bridge-paragraph");
       const link = content.querySelector(".bridge-link");
 
+      // Initial states
       gsap.set([eyebrow, heading, paragraph, link], {
         opacity: 0,
         y: 20,
@@ -57,6 +58,7 @@ function BridgeEurope() {
         transformOrigin: "left center",
       });
 
+      // Reveal animation
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
@@ -133,14 +135,15 @@ function BridgeEurope() {
       className="overflow-hidden bg-[#DED0C7] text-[#191113]"
     >
       <div className="mx-auto max-w-360 px-6 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
-        <div
-          ref={contentRef}
-          className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-14"
-        >
-          {/* =========================
-              LEFT CONTENT
-          ========================== */}
-          <div>
+
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-14">
+
+          {/* =====================================
+              LEFT — INTRO
+          ====================================== */}
+          <div ref={contentRef}>
+
+            {/* Eyebrow */}
             <div className="bridge-eyebrow flex items-center gap-4">
               <span className="text-[12px] font-semibold uppercase tracking-[0.22em]">
                 BRIDGEEUROPE™
@@ -149,6 +152,7 @@ function BridgeEurope() {
               <span className="h-px w-10 bg-[#B79A69]" />
             </div>
 
+            {/* Heading */}
             <h2
               className="
                 bridge-heading
@@ -167,6 +171,7 @@ function BridgeEurope() {
               to Europe.
             </h2>
 
+            {/* Description */}
             <p
               className="
                 bridge-paragraph
@@ -182,6 +187,7 @@ function BridgeEurope() {
               businesses with opportunity across Europe.
             </p>
 
+            {/* CTA */}
             <a
               href="#private-access"
               className="
@@ -216,10 +222,11 @@ function BridgeEurope() {
             </a>
           </div>
 
-          {/* =========================
-              RIGHT STEPS
-          ========================== */}
+          {/* =====================================
+              RIGHT — EDITORIAL PROCESS
+          ====================================== */}
           <div className="relative">
+
             {/* Connecting Line */}
             <div
               ref={lineRef}
@@ -227,7 +234,7 @@ function BridgeEurope() {
                 absolute
                 left-0
                 right-0
-                top-[18px]
+                top-[17px]
                 hidden
                 h-px
                 bg-[#B79A69]/55
@@ -236,6 +243,7 @@ function BridgeEurope() {
             />
 
             <div className="grid sm:grid-cols-3">
+
               {bridgeItems.map((item, index) => (
                 <article
                   key={item.number}
@@ -245,7 +253,6 @@ function BridgeEurope() {
                   className={`
                     group
                     relative
-                    px-0
                     py-5
                     sm:px-5
                     sm:py-0
@@ -257,6 +264,7 @@ function BridgeEurope() {
                     }
                   `}
                 >
+
                   {/* Number */}
                   <div
                     className="
@@ -274,7 +282,7 @@ function BridgeEurope() {
                       bg-[#DED0C7]
                     "
                   >
-                    <span className="text-[9px] font-medium tracking-[0.12em] text-[#817173]">
+                    <span className="text-[9px] font-medium tracking-[0.14em] text-[#817173]">
                       {item.number}
                     </span>
                   </div>
@@ -307,7 +315,7 @@ function BridgeEurope() {
                     {item.text}
                   </p>
 
-                  {/* Accent */}
+                  {/* Editorial Accent */}
                   <span
                     className="
                       mt-5
