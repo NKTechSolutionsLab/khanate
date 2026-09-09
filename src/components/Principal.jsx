@@ -14,9 +14,8 @@ function Principal() {
   useEffect(() => {
     const section = sectionRef.current;
     const content = contentRef.current;
-    const image = imageRef.current;
 
-    if (!section || !content || !image) return;
+    if (!section || !content) return;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -60,7 +59,7 @@ function Principal() {
           >
             <img
               src={img}
-              alt="Founder and Principal of KHĀNATE"
+              alt="Shehzad Khan — Founder and Principal of KHĀNATE"
               className="
                 absolute inset-0
                 h-full w-full
@@ -71,13 +70,13 @@ function Principal() {
             />
 
             {/* Editorial Overlay */}
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#191113]/70 via-[#191113]/20 to-transparent px-6 pb-6 pt-20 sm:px-8 sm:pb-8">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#191113]/75 via-[#191113]/20 to-transparent px-6 pb-6 pt-24 sm:px-8 sm:pb-8">
               <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#F5EEE7]">
                 FOUNDER & PRINCIPAL
               </span>
 
               <p className="mt-2 font-serif text-[1.5rem] text-[#F5EEE7]">
-                KHĀNATE
+                Shehzad Khan
               </p>
             </div>
           </div>
@@ -103,47 +102,60 @@ function Principal() {
               Begin With Trust.
             </h2>
 
-            {/* Founder Introduction */}
+            {/* Founder Biography */}
             <p className="mt-7 max-w-115 text-[14px] leading-[1.75] text-[#191113]/70">
-              KHĀNATE was founded on the belief that meaningful
-              opportunities are built through trusted relationships,
-              informed perspective and disciplined access.
+              Shehzad Khan is the Founder and Managing Partner of
+              E-Khānate WorldWide, based in Riga, Latvia, with a focus on
+              cross-border business, market access and strategic
+              relationships across Europe and international markets.
             </p>
 
             <p className="mt-4 max-w-115 text-[14px] leading-[1.75] text-[#191113]/70">
-              As Founder and Principal, the focus is on connecting
-              capital, businesses and strategic relationships across
-              Europe and international markets — identifying
-              opportunities where alignment can create lasting value.
+              His work sits at the intersection of market entry,
+              relationship-building and cultural strategy, connecting
+              businesses, investors and strategic partners while helping
+              international stakeholders navigate opportunities in Latvia
+              and the wider European market.
             </p>
 
-            {/* Founder Philosophy */}
+            {/* Current Roles */}
             <div className="mt-9 border-t border-[#191113]/15 pt-6">
               <div className="grid gap-6 sm:grid-cols-2">
 
                 <div>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#191113]">
-                    THE APPROACH
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em]">
+                    E-KHĀNATE WORLDWIDE
                   </span>
 
-                  <p className="mt-2 max-w-55 text-[13px] leading-[1.65] text-[#191113]/60">
-                    Selective relationships. Informed decisions.
-                    Long-term alignment.
+                  <p className="mt-2 text-[13px] leading-[1.65] text-[#191113]/60">
+                    Founder & Managing Partner
                   </p>
                 </div>
 
                 <div>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#191113]">
-                    THE ROLE
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em]">
+                    AIFLO EUROPE
                   </span>
 
-                  <p className="mt-2 max-w-55 text-[13px] leading-[1.65] text-[#191113]/60">
-                    Connecting the right people, capital and
-                    opportunities with discretion.
+                  <p className="mt-2 text-[13px] leading-[1.65] text-[#191113]/60">
+                    Commercial Director
                   </p>
                 </div>
 
               </div>
+            </div>
+
+            {/* International Perspective */}
+            <div className="mt-8">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em]">
+                INTERNATIONAL PERSPECTIVE
+              </span>
+
+              <p className="mt-2 max-w-115 text-[13px] leading-[1.65] text-[#191113]/60">
+                Professional relationships across Europe, South Asia and
+                the Middle East, with a particular focus on Latvia and
+                European market entry.
+              </p>
             </div>
 
             {/* Company Positioning */}

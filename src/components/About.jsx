@@ -27,13 +27,10 @@ function About() {
       const keywordLines = keywords.querySelectorAll(".about-keyword");
 
       // Initial states
-      gsap.set(
-        [eyebrow, heading, paragraph, link],
-        {
-          opacity: 0,
-          y: 25,
-        }
-      );
+      gsap.set([eyebrow, heading, paragraph, link], {
+        opacity: 0,
+        y: 25,
+      });
 
       gsap.set(image, {
         opacity: 0,
@@ -124,10 +121,20 @@ function About() {
     >
       <div className="mx-auto grid max-w-360 lg:grid-cols-2">
 
-        {/* Content */}
+        {/* =========================
+            CONTENT
+        ========================== */}
         <div
           ref={contentRef}
-          className="px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24 xl:px-16"
+          className="
+            px-6
+            py-14
+            sm:px-8
+            sm:py-20
+            lg:px-12
+            lg:py-24
+            xl:px-16
+          "
         >
           {/* Eyebrow */}
           <div className="about-eyebrow flex items-center gap-4">
@@ -210,11 +217,30 @@ function About() {
           </a>
         </div>
 
-        {/* Visual Side */}
-        <div className="grid min-h-100 grid-cols-2 lg:min-h-130">
-
-          {/* Image */}
-          <div className="relative min-h-full overflow-hidden">
+        {/* =========================
+            VISUAL SIDE
+        ========================== */}
+        <div
+          className="
+            grid
+            min-h-0
+            grid-cols-1
+            lg:min-h-130
+            lg:grid-cols-2
+          "
+        >
+          {/* =========================
+              IMAGE
+          ========================== */}
+          <div
+            className="
+              relative
+              h-70
+              overflow-hidden
+              sm:h-90
+              lg:h-auto
+            "
+          >
             <img
               ref={imageRef}
               src={about}
@@ -228,25 +254,41 @@ function About() {
                 object-cover
                 object-[72%_center]
                 grayscale-[20%]
+                lg:object-[72%_center]
               "
             />
 
             <div className="absolute inset-0 bg-[#130207]/15" />
           </div>
 
-          {/* Keywords */}
+          {/* =========================
+              KEYWORDS
+          ========================== */}
           <div
             ref={keywordsRef}
-            className="flex items-end bg-[#DED0C7] px-6 py-10 sm:px-8 lg:px-10"
+            className="
+              flex
+              min-h-32
+              items-center
+              bg-[#DED0C7]
+              px-6
+              py-8
+              sm:min-h-36
+              sm:px-8
+              lg:items-end
+              lg:px-10
+              lg:py-10
+            "
           >
             <p
               className="
-                text-[9px]
+                text-[10px]
                 font-semibold
                 uppercase
                 leading-[2]
                 tracking-[0.2em]
                 text-[#191113]/70
+                sm:text-[10px]
               "
             >
               <span className="about-keyword block">

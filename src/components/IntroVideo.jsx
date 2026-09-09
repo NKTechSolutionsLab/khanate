@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import vid from "../videos/intro.mp4";
+import vid from "../videos/intro2.mp4";
 
 function IntroVideo({ onComplete }) {
   const overlayRef = useRef(null);

@@ -145,7 +145,9 @@ function Private() {
       id="private-access"
       className="relative overflow-hidden bg-[#130207] text-[#F5EEE7]"
     >
-      {/* Background */}
+      {/* =========================
+          BACKGROUND
+      ========================== */}
       <div className="absolute inset-0 overflow-hidden">
         <img
           ref={backgroundRef}
@@ -158,11 +160,15 @@ function Private() {
         <div className="absolute inset-0 bg-linear-to-r from-[#130207] via-[#130207]/85 to-[#130207]/55" />
       </div>
 
-      {/* Content */}
+      {/* =========================
+          CONTENT
+      ========================== */}
       <div className="relative mx-auto max-w-360 px-6 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
 
-          {/* Left */}
+          {/* =========================
+              LEFT — PRIVATE ACCESS
+          ========================== */}
           <div ref={contentRef}>
 
             {/* Eyebrow */}
@@ -179,33 +185,51 @@ function Private() {
               className="
                 private-heading
                 mt-7
-                max-w-105
+                max-w-110
                 font-serif
-                text-[2.8rem]
+                text-[3rem]
                 font-medium
                 leading-[0.92]
                 tracking-tight
-                sm:text-[3.6rem]
+                sm:text-[3.8rem]
               "
             >
-              A Conversation
+              Initiate a
               <br />
-              Starts Here.
+              Private Conversation.
             </h2>
 
             {/* Description */}
             <p
               className="
                 private-paragraph
-                mt-6
-                max-w-95
-                text-[12px]
-                leading-[1.7]
-                text-[#F5EEE7]/70
+                mt-7
+                max-w-105
+                text-[13px]
+                leading-[1.75]
+                text-[#F5EEE7]/72
               "
             >
-              Access to selected opportunities, insights and
-              discussions. By invitation only.
+              KHĀNATE engages selectively where there is a credible
+              basis for collaboration. Private access is intended for
+              investors, entrepreneurs, developers, corporate and
+              strategic partners exploring relevant opportunities
+              across Europe.
+            </p>
+
+            <p
+              className="
+                private-paragraph
+                mt-4
+                max-w-105
+                text-[13px]
+                leading-[1.75]
+                text-[#F5EEE7]/72
+              "
+            >
+              Introduce your area of interest, geography and context.
+              Where there is alignment, the conversation can move
+              forward privately.
             </p>
 
             {/* CTA */}
@@ -214,30 +238,30 @@ function Private() {
               className="
                 private-button
                 group
-                mt-7
+                mt-8
                 inline-flex
-                h-11
+                h-12
                 items-center
-                gap-6
+                gap-7
                 border
                 border-[#B79A69]
-                bg-[#5A101C]/80
-                px-5
-                text-[10px]
+                bg-[#5A101C]/75
+                px-6
+                text-[11px]
                 font-semibold
                 uppercase
-                tracking-[0.17em]
+                tracking-[0.18em]
                 transition-all
                 duration-300
                 hover:bg-[#B79A69]
                 hover:text-[#191113]
               "
             >
-              <span>REQUEST PRIVATE ACCESS</span>
+              <span>INITIATE PRIVATE CONVERSATION</span>
 
               <span
                 className="
-                  text-[15px]
+                  text-[16px]
                   font-light
                   transition-transform
                   duration-300
@@ -249,29 +273,76 @@ function Private() {
             </a>
           </div>
 
-          {/* Quote */}
+          {/* =========================
+              RIGHT — QUALIFICATION
+          ========================== */}
           <div
             ref={quoteRef}
-            className="border-l border-[#B79A69]/40 pl-7 lg:ml-auto lg:max-w-90"
+            className="
+              border-l
+              border-[#B79A69]/40
+              pl-7
+              lg:ml-auto
+              lg:max-w-105
+            "
           >
             <p
               className="
                 private-quote
                 font-serif
-                text-[1.35rem]
+                text-[1.4rem]
                 italic
-                leading-[1.2]
-                text-[#F5EEE7]/85
-                sm:text-[1.6rem]
+                leading-[1.25]
+                text-[#F5EEE7]/88
+                sm:text-[1.65rem]
               "
             >
-              “Stronger connections create a more prosperous tomorrow.”
+              The most valuable access is rarely the most visible.
             </p>
+
+            <div className="mt-8 space-y-5 border-t border-[#F5EEE7]/15 pt-7">
+
+              {/* Audience */}
+              <div>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
+                  FOR
+                </span>
+
+                <p className="mt-2 text-[12px] leading-[1.7] text-[#F5EEE7]/65">
+                  Private Investors · Family Offices · Entrepreneurs ·
+                  Developers · Corporates · Strategic Partners
+                </p>
+              </div>
+
+              {/* Interests */}
+              <div>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
+                  AREAS OF INTEREST
+                </span>
+
+                <p className="mt-2 text-[12px] leading-[1.7] text-[#F5EEE7]/65">
+                  Investment · Real Estate · Business · Strategic
+                  Partnership · Technology
+                </p>
+              </div>
+
+              {/* Geography */}
+              <div>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
+                  GEOGRAPHY
+                </span>
+
+                <p className="mt-2 text-[12px] leading-[1.7] text-[#F5EEE7]/65">
+                  Europe · Latvia · India–Europe · Middle East–Europe ·
+                  Central Asia–Europe
+                </p>
+              </div>
+            </div>
 
             <span
               className="
                 private-quote-line
-                mt-7
+                mt-8
                 block
                 h-px
                 bg-[#B79A69]
