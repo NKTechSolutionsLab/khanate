@@ -28,19 +28,13 @@ function Hero({ animate }) {
 
     const timeline = gsap.timeline();
 
-    /*
-      Background
-    */
     timeline.to(background, {
       opacity: 1,
-      scale: 1,
+      scale: 1.242,
       duration: 1.8,
       ease: "power2.out",
     });
 
-    /*
-      Eyebrow
-    */
     timeline.to(
       eyebrow,
       {
@@ -52,9 +46,6 @@ function Hero({ animate }) {
       "-=1.25"
     );
 
-    /*
-      Main heading
-    */
     timeline.to(
       heading,
       {
@@ -66,9 +57,6 @@ function Hero({ animate }) {
       "-=0.5"
     );
 
-    /*
-      Description
-    */
     timeline.to(
       description,
       {
@@ -80,9 +68,6 @@ function Hero({ animate }) {
       "-=0.6"
     );
 
-    /*
-      CTA
-    */
     timeline.to(
       cta,
       {
@@ -94,9 +79,6 @@ function Hero({ animate }) {
       "-=0.45"
     );
 
-    /*
-      Pagination
-    */
     timeline.to(
       pagination,
       {
@@ -108,9 +90,6 @@ function Hero({ animate }) {
       "-=0.4"
     );
 
-    /*
-      Quiet authority
-    */
     timeline.to(
       [desktopStatement, mobileStatement],
       {
@@ -134,28 +113,28 @@ function Hero({ animate }) {
       className="relative min-h-screen w-full overflow-hidden bg-[#130207]"
     >
       {/* Background */}
-      <div className="hero-background absolute inset-0 scale-[1.035] opacity-0">
+      <div className="hero-background absolute inset-0 scale-[1.242] opacity-0">
         <picture>
-  <source
-    media="(max-width: 640px)"
-    srcSet={heroBgSm}
-  />
+          <source
+            media="(max-width: 640px)"
+            srcSet={heroBgSm}
+          />
 
-  <img
-    src={heroBg}
-    alt=""
-    aria-hidden="true"
-    className="
-      absolute inset-0
-      h-full w-full
-      object-cover
-      object-[57%_center]
-      sm:object-[56%_center]
-      lg:object-[55%_center]
-      xl:object-[54%_center]
-    "
-  />
-</picture>
+          <img
+            src={heroBg}
+            alt=""
+            aria-hidden="true"
+            className="
+              absolute inset-0
+              h-full w-full
+              object-cover
+              object-[57%_center]
+              sm:object-[56%_center]
+              lg:object-[55%_center]
+              xl:object-[54%_center]
+            "
+          />
+        </picture>
 
         <div
           className="
@@ -187,7 +166,6 @@ function Hero({ animate }) {
           items-center
           px-6
           pb-16
-          
           sm:px-8
           lg:px-10
           lg:pb-10
@@ -204,7 +182,7 @@ function Hero({ animate }) {
             <div className="hero-eyebrow mb-5 flex translate-y-6 items-center gap-4 opacity-0">
               <span className="h-px w-8 shrink-0 bg-[#B79A69]" />
 
-              <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
+              <p className="text-[9.6px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
                 PRIVATE CAPITAL. STRATEGIC ACCESS. EUROPEAN OPPORTUNITIES.
               </p>
             </div>
@@ -216,15 +194,15 @@ function Hero({ animate }) {
                 max-w-162.5
                 translate-y-6
                 font-serif
-                text-[2.65rem]
+                text-[3.18rem]
                 font-medium
                 leading-[0.94]
                 tracking-tight
                 text-[#F5EEE7]
                 opacity-0
-                sm:text-[3.15rem]
-                lg:text-[3.55rem]
-                xl:text-[3.9rem]
+                sm:text-[3.78rem]
+                lg:text-[4.26rem]
+                xl:text-[4.68rem]
               "
             >
               <span className="block">
@@ -251,14 +229,14 @@ function Hero({ animate }) {
                 mt-5
                 max-w-97.5
                 translate-y-6
-                text-[11px]
+                text-[13.2px]
                 leading-[1.55]
                 text-[#F5EEE7]/80
                 opacity-0
-                sm:text-[12px]
+                sm:text-[14.4px]
                 lg:mt-6
                 lg:max-w-107.5
-                lg:text-[13px]
+                lg:text-[15.6px]
               "
             >
               A discreet European platform connecting capital,
@@ -281,7 +259,7 @@ function Hero({ animate }) {
                 border-[#B79A69]
                 bg-[#5A101C]/80
                 px-5
-                text-[8px]
+                text-[9.6px]
                 font-semibold
                 uppercase
                 tracking-[0.17em]
@@ -299,7 +277,7 @@ function Hero({ animate }) {
 
               <span
                 className="
-                  text-[15px]
+                  text-[18px]
                   font-light
                   leading-none
                   transition-transform
@@ -313,7 +291,7 @@ function Hero({ animate }) {
 
             {/* Pagination */}
             <div className="hero-pagination mt-7 flex translate-y-6 items-center gap-4 opacity-0 lg:mt-8">
-              <span className="text-[7px] font-semibold tracking-[0.15em] text-[#B79A69]">
+              <span className="text-[8.4px] font-semibold tracking-[0.15em] text-[#B79A69]">
                 01 / 06
               </span>
 
@@ -327,7 +305,7 @@ function Hero({ animate }) {
               <p
                 className="
                   max-w-26.25
-                  text-[8px]
+                  text-[9.6px]
                   font-semibold
                   uppercase
                   leading-loose
@@ -353,7 +331,7 @@ function Hero({ animate }) {
       {/* Mobile Statement */}
       <div className="hero-statement-mobile absolute bottom-7 left-6 z-10 translate-y-6 opacity-0 lg:hidden sm:left-8">
         <div className="border-l border-[#B79A69]/60 pl-3">
-          <p className="text-[6px] font-semibold uppercase leading-[1.85] tracking-[0.2em] text-[#F5EEE7]/80 sm:text-[7px]">
+          <p className="text-[7.2px] font-semibold uppercase leading-[1.85] tracking-[0.2em] text-[#F5EEE7]/80 sm:text-[8.4px]">
             QUIET
             <br />
             AUTHORITY
