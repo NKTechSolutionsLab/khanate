@@ -139,14 +139,14 @@ function Hero({ animate }) {
             alt=""
             aria-hidden="true"
             className="
-      absolute inset-0
-      h-full w-full
-      object-cover
-      object-[57%_center]
-      sm:object-[56%_center]
-      lg:object-[55%_center]
-      xl:object-[54%_center]
-    "
+              absolute inset-0
+              h-full w-full
+              object-cover
+              object-[57%_center]
+              sm:object-[56%_center]
+              lg:object-[55%_center]
+              xl:object-[54%_center]
+            "
           />
         </picture>
 
@@ -180,7 +180,6 @@ function Hero({ animate }) {
           items-center
           px-6
           pb-16
-          
           sm:px-8
           lg:px-10
           lg:pb-10
@@ -189,13 +188,15 @@ function Hero({ animate }) {
         "
       >
         <div className="flex w-full items-center justify-between">
+
           {/* Left Content */}
           <div className="w-full max-w-162.5">
+
             {/* Eyebrow */}
             <div className="hero-eyebrow mb-5 flex translate-y-6 items-center gap-4 opacity-0">
               <span className="h-px w-8 shrink-0 bg-[#B79A69]" />
 
-              <p className="text-[9.6px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
+              <p className="text-[10.56px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
                 PRIVATE CAPITAL. STRATEGIC ACCESS. EUROPEAN OPPORTUNITIES.
               </p>
             </div>
@@ -228,78 +229,75 @@ function Hero({ animate }) {
             </h1>
 
             {/* Description */}
-            {/* Description */}
             <p
               className="
-    hero-description
-    mt-5
-    max-w-97.5
-    translate-y-6
-    text-[13.2px]
-    leading-[1.55]
-    text-[#F5EEE7]/80
-    opacity-0
-    sm:text-[14.4px]
-    lg:mt-6
-    lg:max-w-107.5
-    lg:text-[15.6px]
-  "
+                hero-description
+                mt-5
+                max-w-97.5
+                translate-y-6
+                text-[14.52px]
+                leading-[1.55]
+                text-[#F5EEE7]/80
+                opacity-0
+                sm:text-[15.84px]
+                lg:mt-6
+                lg:max-w-107.5
+                lg:text-[17.16px]
+              "
             >
               A discreet European platform connecting capital, enterprise and
               selected opportunities.
             </p>
 
             {/* CTA */}
-            {/* CTA */}
             <a
               href="#private-access"
               className="
-    hero-cta
-    group
-    mt-6
-    inline-flex
-    h-11
-    translate-y-6
-    items-center
-    gap-6
-    border
-    border-[#B79A69]
-    bg-[#5A101C]/80
-    px-5
-    text-[9.6px]
-    font-semibold
-    uppercase
-    tracking-[0.17em]
-    text-[#F5EEE7]
-    opacity-0
-    transition-all
-    duration-300
-    hover:bg-[#B79A69]
-    hover:text-[#191113]
-    lg:mt-7
-    lg:h-11.5
-  "
+                hero-cta
+                group
+                mt-6
+                inline-flex
+                h-11
+                translate-y-6
+                items-center
+                gap-6
+                border
+                border-[#B79A69]
+                bg-[#5A101C]/80
+                px-5
+                text-[10.56px]
+                font-semibold
+                uppercase
+                tracking-[0.17em]
+                text-[#F5EEE7]
+                opacity-0
+                transition-all
+                duration-300
+                hover:bg-[#B79A69]
+                hover:text-[#191113]
+                lg:mt-7
+                lg:h-11.5
+              "
             >
               <span>REQUEST PRIVATE ACCESS</span>
 
               <span
                 className="
-      text-[18px]
-      font-light
-      leading-none
-      transition-transform
-      duration-300
-      group-hover:translate-x-1
-    "
+                  text-[19.8px]
+                  font-light
+                  leading-none
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
               >
                 →
               </span>
             </a>
 
             {/* Pagination */}
-
             <div className="hero-pagination mt-7 flex translate-y-6 items-center gap-4 opacity-0 lg:mt-8">
-              <span className="text-[8.4px] font-semibold tracking-[0.15em] text-[#B79A69]">
+              <span className="text-[9.24px] font-semibold tracking-[0.15em] text-[#B79A69]">
                 01 / 06
               </span>
 
@@ -311,24 +309,24 @@ function Hero({ animate }) {
           <div className="hero-statement-desktop mr-8 hidden translate-y-6 opacity-0 lg:block xl:mr-12">
             <div className="border-l border-[#B79A69]/50 pl-6">
               <p
-  className="
-    max-w-26.25
-    text-[9.6px]
-    font-semibold
-    uppercase
-    leading-loose
-    tracking-[0.2em]
-    text-[#F5EEE7]/90
-  "
->
-  QUIET
-  <br />
-  AUTHORITY
-  <br />
-  CREATES
-  <br />
-  OPPORTUNITY.
-</p>
+                className="
+                  max-w-26.25
+                  text-[10.56px]
+                  font-semibold
+                  uppercase
+                  leading-loose
+                  tracking-[0.2em]
+                  text-[#F5EEE7]/90
+                "
+              >
+                QUIET
+                <br />
+                AUTHORITY
+                <br />
+                CREATES
+                <br />
+                OPPORTUNITY.
+              </p>
 
               <span className="mt-5 block h-px w-9 bg-[#B79A69]" />
             </div>
@@ -339,7 +337,7 @@ function Hero({ animate }) {
       {/* Mobile Statement */}
       <div className="hero-statement-mobile absolute bottom-7 left-6 z-10 translate-y-6 opacity-0 lg:hidden sm:left-8">
         <div className="border-l border-[#B79A69]/60 pl-3">
-          <p className="text-[6px] font-semibold uppercase leading-[1.85] tracking-[0.2em] text-[#F5EEE7]/80 sm:text-[7px]">
+          <p className="text-[7.92px] font-semibold uppercase leading-[1.85] tracking-[0.2em] text-[#F5EEE7]/80 sm:text-[9.24px]">
             QUIET
             <br />
             AUTHORITY
