@@ -18,7 +18,7 @@ function App() {
   });
 
   return (
-    <main className="min-h-screen bg-[#130207] text-[#F5EEE7]">
+    <main className="min-h-screen bg-[#F0E7DE] text-[#F5EEE7]">
       <IntroVideo onComplete={() => setIntroComplete(true)} />
 
       <Nav animate={introComplete} />
