@@ -11,5 +11,19 @@ section {
   scroll-margin-top: 50px;
 }
 
+/* Dark sections */
+.bg-\[\#130207\] ::selection,
+.bg-\[\#22050B\] ::selection,
+.bg-\[\#260506\] ::selection {
+  background: #B79A69;
+  color: #191113;
+}
 
+/* Light sections */
+.bg-\[\#F0E7DE\] ::selection,
+.bg-\[\#E9DED4\] ::selection,
+.bg-\[\#E2D6CC\] ::selection {
+  background: #5A101C;
+  color: #F5EEE7;
+}
 
