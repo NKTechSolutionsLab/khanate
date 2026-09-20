@@ -141,21 +141,19 @@ function About() {
 
               <div className="flex items-center gap-4">
 
-                <span className="font-mono text-[10px] tracking-[0.18em] text-[#A06A52]">
-                  02
-                </span>
+                
 
                 <span className="h-px w-10 bg-[#B79A69]" />
 
                 {/* SUBHEADING / SECTION LABEL +20% */}
 
-                <span className="text-[12px] font-semibold uppercase tracking-[0.24em]">
+                <span className="text-[13px] font-semibold uppercase tracking-[0.24em]">
                   ABOUT KHĀNATE
                 </span>
 
               </div>
 
-              <span className="hidden text-[11px] font-semibold uppercase tracking-[0.2em] text-[#191113]/35 sm:block">
+              <span className="hidden text-[10px] font-semibold uppercase tracking-[0.2em] text-[#191113]/70 sm:block">
                 PRIVATE CAPITAL · STRATEGIC ACCESS · EUROPE
               </span>
 
@@ -195,7 +193,7 @@ function About() {
 
                 {/* SUBHEADING +20% */}
 
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
+                <span className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
                   THE HOUSE
                 </span>
 
@@ -220,13 +218,13 @@ function About() {
 
                 {/* SUBHEADING +20% */}
 
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#191113]/35">
+                <span className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#191113]/70">
                   POSITION
                 </span>
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="text-[17px] leading-[1.75] text-[#191113]/55 sm:text-[18px]">
+                <p className="text-[17px] leading-[1.75] text-[#191113]/65 sm:text-[18px]">
                   A strategic platform connecting international
                   capital, European businesses, strategic partners
                   and relevant opportunities across borders.
@@ -257,7 +255,7 @@ function About() {
 
               {/* SUBHEADING +20% */}
 
-              <span className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
+              <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
                 THE THESIS
               </span>
 
@@ -300,7 +298,7 @@ function About() {
 
                 {/* SUBHEADING +20% */}
 
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/35">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/35">
                   OUR POINT OF VIEW
                 </span>
 
@@ -407,7 +405,7 @@ function About() {
 
                 {/* SUBHEADING +20% */}
 
-                <span className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#A06A52]">
+                <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#A06A52]">
                   THE KHĀNATE MODEL
                 </span>
 
@@ -487,7 +485,7 @@ function About() {
 
                   {/* SUBHEADING +20% */}
 
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#191113]/30">
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#191113]/70">
                     CAPITAL
                   </span>
 
@@ -501,7 +499,7 @@ function About() {
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="mt-3 text-[16px] leading-[1.7] text-[#191113]/55">
+                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/55">
                   Relevant capital connected with credible
                   European opportunities.
                 </p>
@@ -531,7 +529,7 @@ function About() {
 
                   {/* SUBHEADING +20% */}
 
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#191113]/30">
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#191113]/70">
                     CONTEXT
                   </span>
 
@@ -545,7 +543,7 @@ function About() {
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="mt-3 text-[16px] leading-[1.7] text-[#191113]/55">
+                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/55">
                   Understanding markets, people and strategic
                   conditions before action.
                 </p>
@@ -575,7 +573,7 @@ function About() {
 
                   {/* SUBHEADING +20% */}
 
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#191113]/30">
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#191113]/70">
                     ACCESS
                   </span>
 
@@ -589,7 +587,7 @@ function About() {
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="mt-3 text-[16px] leading-[1.7] text-[#191113]/55">
+                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/55">
                   Strategic connections where relevance and
                   alignment are clear.
                 </p>
@@ -609,7 +607,7 @@ function About() {
 
                   {/* SUBHEADING +20% */}
 
-                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#191113]/30">
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-[#191113]/70">
                     OUTCOME
                   </span>
 
@@ -623,7 +621,7 @@ function About() {
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="mt-3 text-[16px] leading-[1.7] text-[#191113]/55">
+                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/55">
                   Moving relationships toward opportunities
                   with long-term potential.
                 </p>
@@ -662,7 +660,7 @@ function About() {
 
               {/* SUBHEADING +20% */}
 
-              <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
+              <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
                 THE HOUSE
               </span>
 

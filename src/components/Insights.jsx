@@ -28,87 +28,34 @@ const insights = [
 
 function Insights() {
   const sectionRef = useRef(null);
-  const contentRef = useRef(null);
-  const cardsRef = useRef([]);
+  const itemsRef = useRef([]);
 
   useEffect(() => {
     const section = sectionRef.current;
-    const content = contentRef.current;
-    const cards = cardsRef.current;
+    const items = itemsRef.current.filter(Boolean);
 
-    if (!section || !content || !cards.length) return;
+    if (!section || !items.length) return;
 
     const ctx = gsap.context(() => {
-      const eyebrow = content.querySelector(".insights-eyebrow");
-      const heading = content.querySelector(".insights-heading");
-      const paragraph = content.querySelector(".insights-paragraph");
-      const link = content.querySelector(".insights-link");
-
-      gsap.set([eyebrow, heading, paragraph, link], {
-        opacity: 0,
-        y: 22,
-      });
-
-      gsap.set(cards, {
-        opacity: 0,
-        y: 25,
-      });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top 75%",
-          once: true,
+      gsap.fromTo(
+        items,
+        {
+          opacity: 0,
+          y: 22,
         },
-      });
-
-      tl.to(eyebrow, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out",
-      })
-        .to(
-          heading,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.85,
-            ease: "power3.out",
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 82%",
+            once: true,
           },
-          "-=0.35"
-        )
-        .to(
-          paragraph,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            ease: "power2.out",
-          },
-          "-=0.45"
-        )
-        .to(
-          link,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power2.out",
-          },
-          "-=0.35"
-        )
-        .to(
-          cards,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.75,
-            stagger: 0.12,
-            ease: "power2.out",
-          },
-          "-=0.45"
-        );
+        }
+      );
     }, section);
 
     return () => ctx.revert();
@@ -118,81 +65,191 @@ function Insights() {
     <section
       ref={sectionRef}
       id="insights"
-      className="overflow-hidden bg-[#F5EEE7] text-[#191113]"
+      className="bg-[#F5EEE7] text-[#191113]"
     >
-      <div className="mx-auto max-w-360 px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-          {/* LEFT CONTENT */}
-          <div ref={contentRef}>
-            <div className="insights-eyebrow flex items-center gap-4">
-              <span className="text-[12px] font-semibold uppercase tracking-[0.2em]">
+      <div className="mx-auto max-w-360 px-6 py-12 sm:px-8 sm:py-14 lg:px-12 lg:py-16 xl:px-16">
+
+        {/* =========================================================
+            HEADER
+        ========================================================== */}
+
+        <div className="flex flex-col gap-5 border-b border-[#191113]/20 pb-7 sm:flex-row sm:items-end sm:justify-between">
+
+          <div>
+
+            <div className="flex items-center gap-3">
+
+              <span className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
                 INSIGHTS
               </span>
 
-              <span className="h-px w-10 bg-[#B79A69]" />
+              <span className="h-px w-8 bg-[#B79A69]" />
+
             </div>
 
-            <h2 className="insights-heading mt-7 max-w-100 font-serif text-[2.8rem] font-medium leading-[0.92] tracking-tight sm:text-[3.4rem]">
-              Perspective
-              <br />
-              Before Position.
+            {/* KEPT SAME SIZE */}
+
+            <h2 className="mt-4 font-serif text-[2.35rem] leading-[0.98] tracking-[-0.035em] sm:text-[2.8rem]">
+              Perspective before position.
             </h2>
 
-            <p className="insights-paragraph mt-6 max-w-90 text-[12px] leading-[1.65] text-[#191113]/65 sm:text-[13px]">
-              Thoughts, analysis and perspectives on capital, markets and
-              opportunity across Europe.
+          </div>
+
+          <div className="flex items-center gap-5 sm:pb-1">
+
+            {/* INCREASED SIZE + VISIBILITY */}
+
+            <p className="hidden max-w-[300px] text-[16px] leading-[1.7] text-[#191113]/70 md:block">
+              Thoughts on capital, markets and opportunity across Europe.
             </p>
+
+            {/* INCREASED SIZE + VISIBILITY */}
 
             <a
               href="#private-access"
-              className="insights-link group mt-7 inline-flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.18em]"
+              className="group inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#191113]/85 transition-colors duration-300 hover:text-[#A06A52]"
             >
-              EXPLORE INSIGHTS
+              EXPLORE
 
-              <span className="text-[15px] font-light transition-transform duration-300 group-hover:translate-x-1">
+              <span className="text-[16px] font-light transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
             </a>
+
           </div>
 
-          {/* INSIGHT CARDS */}
-          <div className="grid gap-4 sm:grid-cols-3">
-            {insights.map((item, index) => (
-              <article
-                key={item.title}
-                ref={(el) => {
-                  cardsRef.current[index] = el;
-                }}
-                className="group relative min-h-55 overflow-hidden sm:min-h-65"
-              >
-                <img
-                  src={item.img}
-                  alt=""
-                  aria-hidden="true"
-                  className="absolute inset-0 h-full w-full object-cover grayscale transition-transform duration-700 group-hover:scale-105"
-                />
+        </div>
 
-                <div className="absolute inset-0 bg-[#130207]/60 transition-colors duration-300 group-hover:bg-[#130207]/45" />
 
-                <div className="relative flex h-full flex-col justify-end p-5 text-[#F5EEE7]">
-                  <h3 className="max-w-45 font-serif text-[1.3rem] leading-[1]">
-                    {item.title}
-                  </h3>
+        {/* =========================================================
+            INSIGHTS
+        ========================================================== */}
 
-                  <div className="mt-5 flex items-center justify-between">
-                    <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#D8BF8E]">
+        <div className="grid sm:grid-cols-3">
+
+          {insights.map((item, index) => (
+            <article
+              key={item.title}
+              ref={(el) => {
+                itemsRef.current[index] = el;
+              }}
+              className={`
+                group
+                border-b
+                border-[#191113]/20
+                px-0
+                py-6
+                sm:min-h-[225px]
+                sm:px-6
+                sm:py-7
+                ${
+                  index > 0
+                    ? "sm:border-l sm:border-[#191113]/20"
+                    : ""
+                }
+                ${
+                  index === 0
+                    ? "sm:pl-0"
+                    : ""
+                }
+                ${
+                  index === insights.length - 1
+                    ? "sm:pr-0"
+                    : ""
+                }
+              `}
+            >
+
+              <div className="grid grid-cols-[100px_1fr] gap-5 sm:block">
+
+                {/* IMAGE */}
+
+                <div className="aspect-[4/3] overflow-hidden sm:aspect-[1.5/1]">
+
+                  <img
+                    src={item.img}
+                    alt=""
+                    aria-hidden="true"
+                    className="
+                      h-full
+                      w-full
+                      object-cover
+                      transition-transform
+                      duration-700
+                      group-hover:scale-[1.04]
+                    "
+                  />
+
+                </div>
+
+
+                {/* CONTENT */}
+
+                <div className="flex flex-col justify-between sm:mt-5">
+
+                  <div>
+
+                    {/* INCREASED SIZE + VISIBILITY */}
+
+                    <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
                       {item.category}
                     </span>
 
-                    <span className="text-[18px] font-light transition-transform duration-300 group-hover:translate-x-1">
+                    {/* KEPT SAME SIZE */}
+
+                    <h3 className="mt-2 max-w-[300px] font-serif text-[1.35rem] leading-[1.05] tracking-[-0.02em] sm:text-[1.5rem]">
+                      {item.title}
+                    </h3>
+
+                  </div>
+
+
+                  <div className="mt-4 flex items-center justify-between sm:mt-6">
+
+                    {/* INCREASED SIZE + VISIBILITY */}
+
+                    <span className="text-[11px] uppercase tracking-[0.16em] text-[#191113]/70">
+                      ARTICLE
+                    </span>
+
+                    {/* INCREASED SIZE + VISIBILITY */}
+
+                    <span className="text-[17px] font-light text-[#191113]/70 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#A06A52]">
                       →
                     </span>
+
                   </div>
+
                 </div>
-              </article>
-            ))}
-          </div>
+
+              </div>
+
+            </article>
+          ))}
+
         </div>
+
+
+        {/* =========================================================
+            FOOTER
+        ========================================================== */}
+
+        <div className="flex items-center justify-between pt-5">
+
+          {/* INCREASED SIZE + VISIBILITY */}
+
+          <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#191113]/55">
+            KHĀNATE
+          </span>
+
+          {/* INCREASED SIZE + VISIBILITY */}
+
+          <span className="text-[10px] uppercase tracking-[0.16em] text-[#191113]/50">
+            MARKETS · STRATEGY · GEOGRAPHY
+          </span>
+
+        </div>
+
       </div>
     </section>
   );

@@ -8,35 +8,108 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Principal() {
   const sectionRef = useRef(null);
-  const contentRef = useRef(null);
   const imageRef = useRef(null);
+  const imageInnerRef = useRef(null);
+  const contentRef = useRef(null);
+  const nameRef = useRef(null);
+  const statementRef = useRef(null);
 
   useEffect(() => {
     const section = sectionRef.current;
-    const content = contentRef.current;
     const image = imageRef.current;
+    const imageInner = imageInnerRef.current;
+    const content = contentRef.current;
+    const name = nameRef.current;
+    const statement = statementRef.current;
 
-    if (!section || !content || !image) return;
+    if (
+      !section ||
+      !image ||
+      !imageInner ||
+      !content ||
+      !name ||
+      !statement
+    ) {
+      return;
+    }
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        content,
-        {
-          opacity: 0,
-          y: 20,
+      const intro = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top 78%",
+          once: true,
         },
-        {
+      });
+
+      gsap.set(image, {
+        opacity: 0,
+        y: 25,
+      });
+
+      gsap.set(name, {
+        opacity: 0,
+        x: 22,
+      });
+
+      gsap.set(content, {
+        opacity: 0,
+        y: 20,
+      });
+
+      gsap.set(statement, {
+        opacity: 0,
+        y: 16,
+      });
+
+      intro
+        .to(image, {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 75%",
-            once: true,
+          duration: 0.85,
+          ease: "power3.out",
+        })
+        .to(
+          name,
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.7,
+            ease: "power3.out",
           },
-        }
-      );
+          "-=0.4"
+        )
+        .to(
+          content,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.75,
+            ease: "power3.out",
+          },
+          "-=0.38"
+        )
+        .to(
+          statement,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.65,
+            ease: "power2.out",
+          },
+          "-=0.25"
+        );
+
+      gsap.to(imageInner, {
+        yPercent: -4,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
     }, section);
 
     return () => ctx.revert();
@@ -46,167 +119,371 @@ function Principal() {
     <section
       ref={sectionRef}
       id="principal"
-      className="bg-[#F5EEE7] text-[#191113]"
+      className="overflow-hidden bg-[#F5EEE7] text-[#191113]"
     >
-      <div className="mx-auto max-w-360 px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-[84px] xl:px-16">
 
-          {/* =========================
-              PRINCIPAL PORTRAIT
-          ========================== */}
+        {/* =========================================================
+            SECTION MARKER
+        ========================================================== */}
+
+        <div className="mb-9 flex items-center justify-between lg:mb-10">
+
+          <div className="flex items-center gap-4">
+
+            <span className="font-mono text-[11px] tracking-[0.16em] text-[#A06A52]">
+              06
+            </span>
+
+            <span className="h-px w-10 bg-[#B79A69]" />
+
+            <span className="text-[13px] font-semibold uppercase tracking-[0.24em]">
+              THE PRINCIPAL
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+        {/* =========================================================
+            MAIN COMPOSITION
+        ========================================================== */}
+
+        <div className="relative lg:min-h-[670px]">
+
+          {/* =======================================================
+              MAROON BACKDROP
+          ======================================================== */}
+
+          <div
+            className="
+              absolute
+              bottom-[4%]
+              left-0
+              top-[21%]
+              hidden
+              w-[39%]
+              bg-[#260506]
+              lg:block
+            "
+          />
+
+
+          {/* =======================================================
+              PORTRAIT
+          ======================================================== */}
+
           <div
             ref={imageRef}
             className="
               group
               relative
-              h-90
+              z-10
+              h-[500px]
               overflow-hidden
               bg-[#DED0C7]
-              sm:h-105
-              lg:h-auto
-              lg:min-h-125
+              sm:h-[585px]
+              lg:absolute
+              lg:left-[7%]
+              lg:top-0
+              lg:h-[610px]
+              lg:w-[42%]
             "
           >
+
             <img
+              ref={imageInnerRef}
               src={img}
-              alt="Founder and Principal of KHĀNATE"
+              alt="Shehzad Khan, Founder and Principal of KHĀNATE"
               className="
                 absolute
                 inset-0
-                h-full
+                h-[108%]
                 w-full
                 object-cover
                 object-[50%_12%]
                 transition-transform
-                duration-1000
+                duration-[1200ms]
                 ease-out
-                group-hover:scale-[1.035]
+                group-hover:scale-[1.02]
                 lg:object-center
               "
             />
 
-            {/* Editorial Overlay */}
-            <div
-              className="
-                absolute
-                inset-x-0
-                bottom-0
-                bg-gradient-to-t
-                from-[#191113]/70
-                via-[#191113]/20
-                to-transparent
-                px-5
-                pb-5
-                pt-16
-                sm:px-8
-                sm:pb-8
-                sm:pt-20
-              "
-            >
-              <span
-                className="
-                  text-[10px]
-                  font-semibold
-                  uppercase
-                  tracking-[0.2em]
-                  text-[#F5EEE7]
-                  sm:text-[12px]
-                "
-              >
-                FOUNDER & PRINCIPAL
-              </span>
+            {/* image wash */}
 
-              <p
-                className="
-                  mt-1.5
-                  font-serif
-                  text-[1.35rem]
-                  leading-none
-                  text-[#F5EEE7]
-                  sm:mt-2
-                  sm:text-[1.5rem]
-                "
-              >
-                Shehzad Khan
-              </p>
-            </div>
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#130207]/80 via-transparent to-transparent" />
 
-          {/* =========================
-              FOUNDER CONTENT
-          ========================== */}
-          <div ref={contentRef}>
 
-            {/* Label */}
-            <div className="flex items-center gap-4">
-              <span className="text-[12px] font-semibold uppercase tracking-[0.2em]">
-                FOUNDER & PRINCIPAL
-              </span>
+            {/* portrait identity */}
 
-              <span className="h-px w-10 bg-[#B79A69]" />
-            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
 
-            {/* Main Heading */}
-            <h2 className="mt-7 max-w-110 font-serif text-[3rem] font-medium leading-[0.92] tracking-tight sm:text-[3.7rem]">
-              Relationships
-              <br />
-              Begin With Trust.
-            </h2>
-
-            {/* Founder Introduction */}
-            <p className="mt-7 max-w-115 text-[14px] leading-[1.75] text-[#191113]/70">
-              KHĀNATE was founded on the belief that meaningful
-              opportunities are built through trusted relationships,
-              informed perspective and disciplined access.
-            </p>
-
-            <p className="mt-4 max-w-115 text-[14px] leading-[1.75] text-[#191113]/70">
-              As Founder and Principal, the focus is on connecting
-              capital, businesses and strategic relationships across
-              Europe and international markets — identifying
-              opportunities where alignment can create lasting value.
-            </p>
-
-            {/* Founder Philosophy */}
-            <div className="mt-9 border-t border-[#191113]/15 pt-6">
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="flex items-end justify-between gap-5">
 
                 <div>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#191113]">
-                    THE APPROACH
+
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#D8BF8E] sm:text-[11px]">
+                    FOUNDER & PRINCIPAL
                   </span>
 
-                  <p className="mt-2 max-w-55 text-[13px] leading-[1.65] text-[#191113]/60">
-                    Selective relationships. Informed decisions.
-                    Long-term alignment.
-                  </p>
+                  <div className="mt-3 h-px w-10 bg-[#B79A69]" />
+
                 </div>
 
-                <div>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#191113]">
-                    THE ROLE
-                  </span>
+                <span className="font-mono text-[10px] tracking-[0.16em] text-[#F5EEE7]/45">
+                  KHĀNATE
+                </span>
 
-                  <p className="mt-2 max-w-55 text-[13px] leading-[1.65] text-[#191113]/60">
-                    Connecting the right people, capital and
-                    opportunities with discretion.
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* =======================================================
+              NAME
+          ======================================================== */}
+
+          <div
+            ref={nameRef}
+            className="
+              relative
+              z-30
+              mt-7
+              lg:absolute
+              lg:right-0
+              lg:top-0
+              lg:mt-0
+              lg:w-[51%]
+              lg:pl-3
+            "
+          >
+
+            <span
+              className="
+                block
+                font-serif
+                text-[3.5rem]
+                leading-[0.81]
+                tracking-[-0.06em]
+                text-[#260506]
+                sm:text-[4.45rem]
+                lg:text-[5.25rem]
+                xl:text-[5.8rem]
+              "
+            >
+              Shehzad
+            </span>
+
+            <span
+              className="
+                ml-[0.64em]
+                block
+                font-serif
+                text-[3.5rem]
+                leading-[0.81]
+                tracking-[-0.06em]
+                text-[#A06A52]
+                sm:text-[4.45rem]
+                lg:text-[5.25rem]
+                xl:text-[5.8rem]
+              "
+            >
+              Khan
+            </span>
+
+          </div>
+
+
+          {/* =======================================================
+              INFORMATION PANEL
+          ======================================================== */}
+
+          <div
+            ref={contentRef}
+            className="
+              relative
+              z-30
+              mt-9
+              w-full
+              bg-[#260506]
+              px-7
+              py-8
+              text-[#F1E7DC]
+              sm:px-9
+              sm:py-10
+              lg:absolute
+              lg:right-0
+              lg:top-[166px]
+              lg:mt-0
+              lg:w-[57%]
+              lg:px-11
+              lg:py-11
+              xl:px-13
+            "
+          >
+
+            {/* top marker */}
+
+            <div className="flex items-center gap-4">
+
+              <span className="h-px w-10 bg-[#B79A69]" />
+
+              <span className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#B79A69]">
+                THE PERSON BEHIND THE PLATFORM
+              </span>
+
+            </div>
+
+
+            {/* Main heading */}
+
+            <h2
+              className="
+                mt-6
+                max-w-[650px]
+                font-serif
+                text-[2.7rem]
+                leading-[0.92]
+                tracking-[-0.05em]
+                sm:text-[3.4rem]
+                lg:text-[3.95rem]
+              "
+            >
+              Relationships
+              <br />
+              begin with
+              <span className="text-[#B79A69]">
+                {" "}
+                trust.
+              </span>
+            </h2>
+
+
+            {/* Body */}
+
+            <div className="mt-7 grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:gap-8">
+
+              <div>
+
+                <p className="text-[15px] leading-[1.75] text-[#D4C3BA]/75 sm:text-[16px]">
+                  KHĀNATE was founded on the belief that meaningful
+                  opportunities are built through trusted relationships,
+                  informed perspective and disciplined access.
+                </p>
+
+                <p className="mt-4 text-[15px] leading-[1.75] text-[#D4C3BA]/75 sm:text-[16px]">
+                  As Founder and Principal, the focus is on connecting
+                  capital, businesses and strategic relationships across
+                  Europe and international markets — identifying
+                  opportunities where alignment can create lasting value.
+                </p>
+
+              </div>
+
+
+              {/* Approach */}
+
+              <div className="border-l border-[#E8DDD3]/10 pl-6">
+
+                <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
+                  PRINCIPAL'S APPROACH
+                </span>
+
+                <div className="mt-5 space-y-3">
+
+                  <p className="font-serif text-[1.32rem] leading-none text-[#F1E7DC]">
+                    Selective relationships.
                   </p>
+
+                  <p className="font-serif text-[1.32rem] leading-none text-[#F1E7DC]/85">
+                    Informed decisions.
+                  </p>
+
+                  <p className="font-serif text-[1.32rem] leading-none text-[#D8BF8E]">
+                    Long-term alignment.
+                  </p>
+
                 </div>
 
               </div>
+
             </div>
 
-            {/* Company Positioning */}
-            <div className="mt-8 flex items-center gap-4">
-              <span className="h-px w-8 bg-[#B79A69]" />
 
-              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#817173]">
-                CAPITAL · CONNECTIONS · OPPORTUNITY
+            {/* identity strip */}
+
+            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-[#E8DDD3]/10 pt-5">
+
+              <span className="text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[#F1E7DC]/60">
+                CAPITAL
               </span>
+
+              <span className="h-3 w-px bg-[#F1E7DC]/15" />
+
+              <span className="text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[#F1E7DC]/60">
+                CONNECTIONS
+              </span>
+
+              <span className="h-3 w-px bg-[#F1E7DC]/15" />
+
+              <span className="text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[#F1E7DC]/60">
+                OPPORTUNITY
+              </span>
+
             </div>
 
           </div>
+
         </div>
+
+
+        {/* =========================================================
+            TRUST STATEMENT
+        ========================================================== */}
+
+        <div
+          ref={statementRef}
+          className="
+            mt-6
+            border-t
+            border-[#191113]/12
+            pt-6
+            lg:mt-5
+            lg:pt-5
+          "
+        >
+
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between mt-12">
+
+            <p
+              className="
+                max-w-[760px]
+                font-serif
+                text-[1.85rem]
+                leading-[1.02]
+                tracking-[-0.03em]
+                sm:text-[2.2rem]
+                lg:text-[2.35rem]
+              "
+            >
+              Meaningful opportunities are built through
+              <span className="text-[#A06A52]">
+                {" "}
+                trusted relationships.
+              </span>
+            </p>
+
+         
+
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

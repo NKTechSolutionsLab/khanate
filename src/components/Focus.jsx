@@ -21,7 +21,7 @@ const focusItems = [
     number: "03",
     title: "EUROPEAN ACCESS",
     description:
-      "Market entry, partner identification, business development and ecosystem access.",
+      "Market entry, partner identification, business development and market access.",
   },
   {
     number: "04",
@@ -31,41 +31,21 @@ const focusItems = [
   },
 ];
 
-const Arrow = () => (
-  <svg
-    width="18"
-    height="18"
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="transition-transform duration-300 group-hover:translate-x-1"
-  >
-    <path
-      d="M2 8H13"
-      stroke="currentColor"
-      strokeWidth="1"
-    />
-    <path
-      d="M9 4L13 8L9 12"
-      stroke="currentColor"
-      strokeWidth="1"
-    />
-  </svg>
-);
-
 export default function Focus() {
   const sectionRef = useRef(null);
-  const cardsRef = useRef([]);
+  const introRef = useRef(null);
+  const rowsRef = useRef([]);
 
   useEffect(() => {
     const section = sectionRef.current;
-    const cards = cardsRef.current;
+    const intro = introRef.current;
+    const rows = rowsRef.current.filter(Boolean);
 
-    if (!section || !cards.length) return;
+    if (!section || !intro || !rows.length) return;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        cards,
+        intro,
         {
           opacity: 0,
           y: 30,
@@ -73,13 +53,31 @@ export default function Focus() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.75,
-          delay:0.5,
-          stagger: 0.12,
+          duration: 0.8,
           ease: "power3.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 75%",
+            start: "top 78%",
+            once: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        rows,
+        {
+          opacity: 0,
+          y: 35,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 68%",
             once: true,
           },
         }
@@ -92,65 +90,163 @@ export default function Focus() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#260506] text-[#f2e9df]"
       id="focus"
+      className="overflow-hidden bg-[#260506] text-[#F2E9DF]"
     >
-      <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-10 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-[1440px] px-6 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28 xl:px-16">
 
-        {/* Section Header */}
-        <div className="mb-10 flex items-center gap-4">
-          <span className="text-[12px] font-medium uppercase tracking-[0.28em] text-[#e9dfd4]">
-            Our Focus
-          </span>
+        {/* INTRO */}
+        <div
+          ref={introRef}
+          className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-24"
+        >
+          {/* LEFT */}
+          <div>
+            <div className="flex items-center gap-4">
+              <span className="font-mono text-[11px] tracking-[0.16em] text-[#B79572]">
+                03
+              </span>
 
-          <span className="h-px w-8 bg-[#9d8064]" />
+              <span className="h-px w-10 bg-[#B79572]" />
+
+              <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#E9DFD4]">
+                OUR FOCUS
+              </span>
+            </div>
+
+            <div className="mt-12 hidden lg:block">
+              <span className="font-serif text-[8rem] leading-none tracking-[-0.09em] text-[#B79A69]/[0.055]">
+                04
+              </span>
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <div>
+            <h2 className="max-w-[850px] font-serif text-[3rem] leading-[0.94] tracking-[-0.055em] sm:text-[3.8rem] lg:text-[4.6rem]">
+              Where capital,
+              <br />
+              access and{" "}
+              <span className="text-[#B79572]">
+                intelligence
+              </span>{" "}
+              meet.
+            </h2>
+
+            <p className="mt-7 max-w-[560px] text-[18px] leading-[1.85] text-[#C7B5AC]/70 sm:text-[15px]">
+              KHĀNATE operates across a concentrated set of commercial,
+              investment and cross-border domains, connecting opportunities
+              with the capital, relationships and insight required to move
+              them forward.
+            </p>
+          </div>
         </div>
 
-        {/* Focus Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        {/* FOCUS INDEX */}
+        <div className="mt-20 border-t border-[#E8DDD3]/12 lg:mt-24">
           {focusItems.map((item, index) => (
             <article
               key={item.number}
               ref={(el) => {
-                cardsRef.current[index] = el;
+                rowsRef.current[index] = el;
               }}
-              className={`
-                group
-                min-h-[220px]
-                px-0 py-2
-                lg:px-8
-                ${
-                  index > 0
-                    ? "border-t border-[#754d3e] md:border-t-0 md:border-l"
-                    : ""
-                }
-              `}
+              className="group relative border-b border-[#E8DDD3]/12"
             >
-              {/* Number */}
-              <span className="mb-6 block text-[12px] tracking-[0.2em] text-[#b79572]">
-                {item.number}
-              </span>
+              <div
+                className="
+                  absolute
+                  left-0
+                  top-0
+                  h-full
+                  w-px
+                  origin-top
+                  scale-y-0
+                  bg-[#D8BF8E]
+                  transition-transform
+                  duration-500
+                  group-hover:scale-y-100
+                "
+              />
 
-              {/* Title */}
-              <h3 className="max-w-[190px] text-[15px] font-medium leading-[1.35] tracking-[0.2em] text-[#f1e7dc]">
-                {item.title}
-              </h3>
+              <div className="grid items-center gap-7 py-8 transition-all duration-500 group-hover:px-4 sm:py-10 lg:grid-cols-[100px_1fr_1.15fr_40px] lg:gap-10 lg:py-12">
 
-              {/* Description */}
-              <p className="mt-5 max-w-[225px] text-[13px] font-light leading-[1.65] tracking-[0.02em] text-[#bba9a0]">
-                {item.description}
-              </p>
+                {/* NUMBER */}
+                <div>
+                  <span
+                    className="
+                      font-mono
+                      text-[11px]
+                      tracking-[0.16em]
+                      text-[#B79572]/65
+                      transition-colors
+                      duration-300
+                      group-hover:text-[#D8BF8E]
+                    "
+                  >
+                    {item.number}
+                  </span>
+                </div>
 
-              {/* Explore */}
-              <a
-                href="#"
-                className="group mt-7 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-[#e6d9cc]"
-              >
-                <span>Explore</span>
-                <Arrow />
-              </a>
+                {/* TITLE */}
+                <div>
+                  <h3
+                    className="
+                      font-serif
+                      text-[1.8rem]
+                      leading-none
+                      tracking-[-0.035em]
+                      text-[#F1E7DC]
+                      transition-colors
+                      duration-300
+                      group-hover:text-[#D8BF8E]
+                      sm:text-[2.15rem]
+                    "
+                  >
+                    {item.title}
+                  </h3>
+                </div>
+
+                {/* DESCRIPTION */}
+                <div>
+                  <p className="max-w-[480px] text-[20px] leading-[1.75] text-[#C7B5AC]/65 transition-colors duration-300 group-hover:text-[#D9C9C1] sm:text-[14px]">
+                    {item.description}
+                  </p>
+                </div>
+
+                {/* ARROW */}
+                <div className="hidden justify-end lg:flex">
+                  <span
+                    className="
+                      flex
+                      h-8
+                      w-8
+                      items-center
+                      justify-center
+                      text-[18px]
+                      text-[#B79572]/50
+                      transition-all
+                      duration-500
+                      group-hover:translate-x-1
+                      group-hover:text-[#D8BF8E]
+                    "
+                  >
+                    ↗
+                  </span>
+                </div>
+              </div>
             </article>
           ))}
+        </div>
+
+        {/* FOOTER LINE */}
+        <div className="mt-6 flex items-center justify-between">
+          <span className="text-[15px] font-semibold uppercase tracking-[0.2em] text-[#B79572]">
+            KHĀNATE
+          </span>
+
+          <span className="hidden text-[12px] uppercase tracking-[0.16em] text-[#C7B5AC]/40 sm:block">
+            CAPITAL · ACCESS · INTELLIGENCE · EUROPE
+          </span>
         </div>
       </div>
     </section>

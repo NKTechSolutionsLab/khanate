@@ -196,7 +196,7 @@ function Hero({ animate }) {
             <div className="hero-eyebrow mb-5 flex translate-y-6 items-center gap-4 opacity-0">
               <span className="h-px w-8 shrink-0 bg-[#B79A69]" />
 
-              <p className="text-[10.56px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
                 PRIVATE CAPITAL. STRATEGIC ACCESS. EUROPEAN OPPORTUNITIES.
               </p>
             </div>
@@ -297,7 +297,7 @@ function Hero({ animate }) {
 
             {/* Pagination */}
             <div className="hero-pagination mt-7 flex translate-y-6 items-center gap-4 opacity-0 lg:mt-8">
-              <span className="text-[9.24px] font-semibold tracking-[0.15em] text-[#B79A69]">
+              <span className="text-[11px] font-semibold tracking-[0.15em] text-[#B79A69]">
                 01 / 06
               </span>
 
@@ -311,7 +311,7 @@ function Hero({ animate }) {
               <p
                 className="
                   max-w-26.25
-                  text-[10.56px]
+                  text-[11px]
                   font-semibold
                   uppercase
                   leading-loose

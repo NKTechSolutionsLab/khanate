@@ -1,138 +1,121 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import heroBg from "../images/hero_bg.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const accessDetails = [
+  {
+    number: "01",
+    label: "FOR",
+    text:
+      "Private Investors · Family Offices · Entrepreneurs · Developers · Corporates · Strategic Partners",
+  },
+  {
+    number: "02",
+    label: "AREAS OF INTEREST",
+    text:
+      "Investment · Real Estate · Business · Strategic Partnership · Technology",
+  },
+  {
+    number: "03",
+    label: "GEOGRAPHY",
+    text:
+      "Europe · Latvia · India–Europe · Middle East–Europe · Central Asia–Europe",
+  },
+];
+
 function Private() {
   const sectionRef = useRef(null);
-  const backgroundRef = useRef(null);
-  const contentRef = useRef(null);
-  const quoteRef = useRef(null);
+  const headerRef = useRef(null);
+  const introRef = useRef(null);
+  const titleRef = useRef(null);
+  const ctaRef = useRef(null);
+  const detailsRef = useRef([]);
 
   useEffect(() => {
     const section = sectionRef.current;
-    const background = backgroundRef.current;
-    const content = contentRef.current;
-    const quote = quoteRef.current;
 
-    if (!section || !background || !content || !quote) return;
+    if (!section) return;
+
+    const details = detailsRef.current.filter(Boolean);
 
     const ctx = gsap.context(() => {
-      const eyebrow = content.querySelector(".private-eyebrow");
-      const heading = content.querySelector(".private-heading");
-      const paragraph = content.querySelector(".private-paragraph");
-      const button = content.querySelector(".private-button");
-      const quoteText = quote.querySelector(".private-quote");
-      const quoteLine = quote.querySelector(".private-quote-line");
-
-      // Initial states
-      gsap.set(eyebrow, {
-        opacity: 0,
-        y: 20,
-      });
-
-      gsap.set(heading, {
-        opacity: 0,
-        y: 30,
-      });
-
-      gsap.set(paragraph, {
-        opacity: 0,
-        y: 20,
-      });
-
-      gsap.set(button, {
-        opacity: 0,
-        y: 15,
-      });
-
-      gsap.set(quoteText, {
-        opacity: 0,
-        y: 25,
-      });
-
-      gsap.set(quoteLine, {
-        width: 0,
-      });
-
-      gsap.set(background, {
-        scale: 1.05,
-      });
-
-      // Main reveal
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top 75%",
+          start: "top 76%",
           once: true,
+        },
+        defaults: {
+          ease: "power3.out",
         },
       });
 
-      tl.to(eyebrow, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: "power2.out",
-      })
-        .to(
-          heading,
+      tl.fromTo(
+        headerRef.current,
+        {
+          opacity: 0,
+          y: 12,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+        }
+      )
+        .fromTo(
+          introRef.current,
           {
-            opacity: 1,
-            y: 0,
-            duration: 0.9,
-            ease: "power3.out",
+            opacity: 0,
+            y: 18,
           },
-          "-=0.3"
-        )
-        .to(
-          paragraph,
           {
             opacity: 1,
             y: 0,
             duration: 0.65,
-            ease: "power2.out",
           },
-          "-=0.5"
+          "-=0.2"
         )
-        .to(
-          button,
+        .fromTo(
+          titleRef.current,
           {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "power2.out",
+            opacity: 0,
+            y: 30,
           },
-          "-=0.3"
-        )
-        .to(
-          quoteText,
           {
             opacity: 1,
             y: 0,
             duration: 0.8,
-            ease: "power2.out",
+          },
+          "-=0.4"
+        )
+        .fromTo(
+          ctaRef.current,
+          {
+            opacity: 0,
+            y: 18,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
           },
           "-=0.35"
         )
-        .to(
-          quoteLine,
+        .fromTo(
+          details,
           {
-            width: 36,
+            opacity: 0,
+            y: 15,
+          },
+          {
+            opacity: 1,
+            y: 0,
             duration: 0.5,
-            ease: "power2.out",
+            stagger: 0.07,
           },
-          "-=0.45"
-        )
-        .to(
-          background,
-          {
-            scale: 1,
-            duration: 1.5,
-            ease: "power2.out",
-          },
-          "-=1"
+          "-=0.3"
         );
     }, section);
 
@@ -145,211 +128,212 @@ function Private() {
       id="private-access"
       className="relative overflow-hidden bg-[#130207] text-[#F5EEE7]"
     >
-      {/* =========================
+      {/* =====================================================
           BACKGROUND
-      ========================== */}
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          ref={backgroundRef}
-          src={heroBg}
-          alt=""
-          aria-hidden="true"
-          className="h-full w-full object-cover object-[68%_center] opacity-45"
-        />
+      ===================================================== */}
 
-        <div className="absolute inset-0 bg-linear-to-r from-[#130207] via-[#130207]/85 to-[#130207]/55" />
+      <div className="pointer-events-none absolute inset-0">
+        {/* Extremely subtle tonal depth — same maroon family */}
+        <div className="absolute left-1/2 top-[35%] h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#22050B]/70 blur-[150px]" />
+
+        {/* Fine architectural lines */}
+        <div className="absolute left-[7%] top-0 hidden h-full w-px bg-[#F5EEE7]/[0.025] lg:block" />
+        <div className="absolute right-[7%] top-0 hidden h-full w-px bg-[#F5EEE7]/[0.025] lg:block" />
       </div>
 
-      {/* =========================
-          CONTENT
-      ========================== */}
-      <div className="relative mx-auto max-w-360 px-6 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
-        <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
+      <div className="relative mx-auto max-w-[1440px] px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24 xl:px-16">
 
-          {/* =========================
-              LEFT — PRIVATE ACCESS
-          ========================== */}
-          <div ref={contentRef}>
+        {/* =====================================================
+            SECTION HEADER
+        ===================================================== */}
 
-            {/* Eyebrow */}
-            <div className="private-eyebrow flex items-center gap-4">
-              <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#F5EEE7]">
-                PRIVATE ACCESS
-              </span>
+        <div
+          ref={headerRef}
+          className="flex items-center justify-between border-b border-[#F5EEE7]/10 pb-5"
+        >
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[11px] tracking-[0.16em] text-[#B79A69]">
+              07
+            </span>
 
-              <span className="h-px w-10 bg-[#B79A69]" />
-            </div>
+            <span className="h-px w-9 bg-[#B79A69]" />
 
-            {/* Heading */}
-            <h2
-              className="
-                private-heading
-                mt-7
-                max-w-110
-                font-serif
-                text-[3rem]
-                font-medium
-                leading-[0.92]
-                tracking-tight
-                sm:text-[3.8rem]
-              "
-            >
-              Initiate a
-              <br />
-              Private Conversation.
-            </h2>
+            <span className="text-[13px] font-semibold uppercase tracking-[0.24em]">
+              PRIVATE ACCESS
+            </span>
+          </div>
 
-            {/* Description */}
-            <p
-              className="
-                private-paragraph
-                mt-7
-                max-w-105
-                text-[13px]
-                leading-[1.75]
-                text-[#F5EEE7]/72
-              "
-            >
-              KHĀNATE engages selectively where there is a credible
-              basis for collaboration. Private access is intended for
-              investors, entrepreneurs, developers, corporate and
-              strategic partners exploring relevant opportunities
-              across Europe.
-            </p>
+          <span className="hidden text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F5EEE7]/25 sm:block">
+            BY INVITATION · BY QUALIFICATION
+          </span>
+        </div>
 
-            <p
-              className="
-                private-paragraph
-                mt-4
-                max-w-105
-                text-[13px]
-                leading-[1.75]
-                text-[#F5EEE7]/72
-              "
-            >
-              Introduce your area of interest, geography and context.
-              Where there is alignment, the conversation can move
-              forward privately.
-            </p>
+        {/* =====================================================
+            MAIN CLOSING STATEMENT
+        ===================================================== */}
 
-            {/* CTA */}
+        <div className="flex min-h-[600px] flex-col justify-center py-20 text-center sm:min-h-[650px] sm:py-24 lg:min-h-[700px] lg:py-28">
+
+          <div
+            ref={introRef}
+            className="flex items-center justify-center gap-4"
+          >
+            <span className="h-px w-10 bg-[#B79A69]" />
+
+            <span className="text-[13px] font-semibold uppercase tracking-[0.27em] text-[#B79A69]">
+              THE NEXT CONVERSATION
+            </span>
+
+            <span className="h-px w-10 bg-[#B79A69]" />
+          </div>
+
+          <h2
+            ref={titleRef}
+            className="mx-auto mt-8 max-w-[1000px] font-serif text-[4rem] font-medium leading-[0.84] tracking-[-0.06em] sm:text-[5rem] md:text-[6rem] lg:text-[6.5rem] xl:text-[7rem]"
+          >
+            Begin where
+            <br />
+            there is{" "}
+            <span className="text-[#B79A69]">
+              alignment.
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-9 max-w-[610px] lg:text-[17px] leading-[1.8] text-[#F5EEE7]/70 sm:text-[15px]">
+            Introduce your area of interest, geography and context.
+            Where there is a credible basis for collaboration, the
+            conversation can move forward privately.
+          </p>
+
+          {/* =================================================
+              PRIMARY ACTION
+          ================================================= */}
+
+          <div
+            ref={ctaRef}
+            className="mx-auto mt-12 w-full max-w-[900px]"
+          >
             <a
               href="#contact"
               className="
-                private-button
                 group
-                mt-8
-                inline-flex
-                h-12
+                relative
+                flex
+                min-h-[105px]
                 items-center
-                gap-7
-                border
-                border-[#B79A69]
-                bg-[#5A101C]/75
-                px-6
-                text-[11px]
-                font-semibold
-                uppercase
-                tracking-[0.18em]
-                transition-all
-                duration-300
-                hover:bg-[#B79A69]
-                hover:text-[#191113]
+                justify-between
+                border-y
+                border-[#B79A69]/35
+                px-1
+                text-left
+                transition-colors
+                duration-500
+                hover:border-[#B79A69]
               "
             >
-              <span>INITIATE PRIVATE CONVERSATION</span>
+              {/* gold active line */}
+              <span className="absolute bottom-0 left-0 h-px w-0 bg-[#B79A69] transition-all duration-700 group-hover:w-full" />
 
-              <span
-                className="
-                  text-[16px]
-                  font-light
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                "
-              >
-                →
+              <div className="flex items-center gap-5 sm:gap-7">
+
+
+                <div>
+                  <span className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F5EEE7]/40">
+                    PRIVATE CONVERSATION
+                  </span>
+
+
+                  <span className="mt-2 block font-serif text-[1.65rem] leading-none tracking-[-0.025em] text-[#F5EEE7]/90 sm:text-[2rem]">
+                    Initiate the conversation
+                  </span>
+                </div>
+              </div>
+
+              <span className="flex items-center gap-4">
+                <span className="hidden text-[13px] uppercase tracking-[0.18em] text-[#F5EEE7]/40 sm:block">
+                  BEGIN HERE
+                </span>
+
+                <span className="text-[33px] font-light text-[#B79A69] transition-transform duration-500 group-hover:translate-x-2">
+                  →
+                </span>
               </span>
             </a>
-          </div>
 
-          {/* =========================
-              RIGHT — QUALIFICATION
-          ========================== */}
-          <div
-            ref={quoteRef}
-            className="
-              border-l
-              border-[#B79A69]/40
-              pl-7
-              lg:ml-auto
-              lg:max-w-105
-            "
-          >
-            <p
-              className="
-                private-quote
-                font-serif
-                text-[1.4rem]
-                italic
-                leading-[1.25]
-                text-[#F5EEE7]/88
-                sm:text-[1.65rem]
-              "
-            >
-              The most valuable access is rarely the most visible.
-            </p>
-
-            <div className="mt-8 space-y-5 border-t border-[#F5EEE7]/15 pt-7">
-
-              {/* Audience */}
-              <div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
-                  FOR
-                </span>
-
-                <p className="mt-2 text-[12px] leading-[1.7] text-[#F5EEE7]/65">
-                  Private Investors · Family Offices · Entrepreneurs ·
-                  Developers · Corporates · Strategic Partners
-                </p>
-              </div>
-
-              {/* Interests */}
-              <div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
-                  AREAS OF INTEREST
-                </span>
-
-                <p className="mt-2 text-[12px] leading-[1.7] text-[#F5EEE7]/65">
-                  Investment · Real Estate · Business · Strategic
-                  Partnership · Technology
-                </p>
-              </div>
-
-              {/* Geography */}
-              <div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
-                  GEOGRAPHY
-                </span>
-
-                <p className="mt-2 text-[12px] leading-[1.7] text-[#F5EEE7]/65">
-                  Europe · Latvia · India–Europe · Middle East–Europe ·
-                  Central Asia–Europe
-                </p>
-              </div>
+            <div className="mt-5 flex justify-center">
+              <span className="text-[12px] uppercase tracking-[0.18em] text-[#F5EEE7]/25">
+                PRIVATE · SELECTIVE · EUROPE
+              </span>
             </div>
+          </div>
+        </div>
 
-            <span
-              className="
-                private-quote-line
-                mt-8
-                block
-                h-px
-                bg-[#B79A69]
-              "
-            />
+        {/* =====================================================
+            QUALIFICATION REGISTER
+        ===================================================== */}
+
+        <div className="border-t border-[#F5EEE7]/10">
+
+          <div className="grid sm:grid-cols-3">
+
+            {accessDetails.map((item, index) => (
+              <div
+                key={item.number}
+                ref={(el) => {
+                  detailsRef.current[index] = el;
+                }}
+                className={`
+                  min-h-[155px]
+                  py-7
+                  sm:py-8
+                  ${index > 0
+                    ? "border-t border-[#F5EEE7]/10 sm:border-l sm:border-t-0 sm:pl-7"
+                    : "sm:pr-7"
+                  }
+                `}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-[12px] tracking-[0.15em] text-[#B79A69]/55">
+                    {item.number}
+                  </span>
+
+                  <span className="h-px w-5 bg-[#B79A69]/30" />
+
+                  <span className="text-[15px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]/80">
+                    {item.label}
+                  </span>
+                </div>
+
+                <p className="mt-4 max-w-[380px] text-[20px] leading-[1.75] text-[#F5EEE7]/50 sm:text-[16px]">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+
+          </div>
+        </div>
+
+        {/* =====================================================
+            FINAL BRAND SIGNATURE
+        ===================================================== */}
+
+        <div className="mt-6 flex flex-col gap-4 border-t border-[#F5EEE7]/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+
+          <div className="flex items-center gap-3">
+            <span className="font-serif text-[18px] text-[#B79A69]">
+              K
+            </span>
+
+            <span className="h-px w-7 bg-[#B79A69]/45" />
+
+            <span className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[#B79A69]/65">
+              KHĀNATE
+            </span>
           </div>
 
+          <span className="text-[12px] uppercase tracking-[0.16em] text-[#F5EEE7]/40 sm:text-right">
+            ACCESS IS SELECTIVE · SUBJECT TO INITIAL QUALIFICATION
+          </span>
         </div>
       </div>
     </section>
