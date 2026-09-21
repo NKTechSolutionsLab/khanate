@@ -147,7 +147,7 @@ function About() {
 
                 {/* SUBHEADING / SECTION LABEL +20% */}
 
-                <span className="text-[13px] font-semibold uppercase tracking-[0.24em]">
+                <span className="text-[18px] font-semibold uppercase tracking-[0.24em]">
                   ABOUT KHĀNATE
                 </span>
 
@@ -171,7 +171,7 @@ function About() {
                   about-intro-item
                   max-w-215
                   font-serif
-                  text-[3.2rem]
+                  text-[3rem]
                   font-medium
                   leading-[0.91]
                   tracking-[-0.05em]
@@ -193,7 +193,7 @@ function About() {
 
                 {/* SUBHEADING +20% */}
 
-                <span className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
+                <span className="text-[16px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
                   THE HOUSE
                 </span>
 
@@ -218,13 +218,13 @@ function About() {
 
                 {/* SUBHEADING +20% */}
 
-                <span className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#191113]/70">
+                <span className="text-[15px] font-semibold uppercase tracking-[0.2em] text-[#191113]/70">
                   POSITION
                 </span>
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="text-[17px] leading-[1.75] text-[#191113]/65 sm:text-[18px]">
+                <p className="text-[17px] leading-[1.75] text-[#191113]/65 md:text-[18px]">
                   A strategic platform connecting international
                   capital, European businesses, strategic partners
                   and relevant opportunities across borders.
@@ -255,7 +255,7 @@ function About() {
 
               {/* SUBHEADING +20% */}
 
-              <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
+              <span className="text-[16px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
                 THE THESIS
               </span>
 
@@ -298,13 +298,13 @@ function About() {
 
                 {/* SUBHEADING +20% */}
 
-                <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-white/35">
+                <span className="text-[15px] font-semibold uppercase tracking-[0.2em] text-white/55">
                   OUR POINT OF VIEW
                 </span>
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="mt-5 text-[17px] leading-[1.8] text-white/55 sm:text-[18px]">
+                <p className="mt-5 text-[18px] leading-[1.8] text-white/55 sm:text-[18px]">
                   The value of an opportunity is inseparable from
                   the quality of the network, context and access
                   surrounding it.
@@ -405,7 +405,7 @@ function About() {
 
                 {/* SUBHEADING +20% */}
 
-                <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#A06A52]">
+                <span className="text-[16px] font-semibold uppercase tracking-[0.24em] text-[#A06A52]">
                   THE KHĀNATE MODEL
                 </span>
 
@@ -431,7 +431,7 @@ function About() {
 
               {/* SUBHEADING +20% */}
 
-              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#191113]/30">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#191113]">
                 HOW THE PLATFORM WORKS
               </span>
 
@@ -479,7 +479,7 @@ function About() {
 
                 <div className="flex items-center justify-between">
 
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-[#A06A52]">
+                  <span className="font-mono text-[15px] tracking-[0.15em] text-[#A06A52]">
                     01
                   </span>
 
@@ -499,7 +499,7 @@ function About() {
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/55">
+                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/80">
                   Relevant capital connected with credible
                   European opportunities.
                 </p>
@@ -523,7 +523,7 @@ function About() {
 
                 <div className="flex items-center justify-between">
 
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-[#A06A52]">
+                  <span className="font-mono text-[15px] tracking-[0.15em] text-[#A06A52]">
                     02
                   </span>
 
@@ -543,7 +543,7 @@ function About() {
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/55">
+                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/80">
                   Understanding markets, people and strategic
                   conditions before action.
                 </p>
@@ -567,7 +567,7 @@ function About() {
 
                 <div className="flex items-center justify-between">
 
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-[#A06A52]">
+                  <span className="font-mono text-[15px] tracking-[0.15em] text-[#A06A52]">
                     03
                   </span>
 
@@ -587,7 +587,7 @@ function About() {
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/55">
+                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/80">
                   Strategic connections where relevance and
                   alignment are clear.
                 </p>
@@ -601,7 +601,7 @@ function About() {
 
                 <div className="flex items-center justify-between">
 
-                  <span className="font-mono text-[10px] tracking-[0.15em] text-[#A06A52]">
+                  <span className="font-mono text-[15px] tracking-[0.15em] text-[#A06A52]">
                     04
                   </span>
 
@@ -621,7 +621,7 @@ function About() {
 
                 {/* DESCRIPTION +20% */}
 
-                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/55">
+                <p className="mt-3 text-[18px] leading-[1.7] text-[#191113]/80">
                   Moving relationships toward opportunities
                   with long-term potential.
                 </p>
@@ -660,7 +660,7 @@ function About() {
 
               {/* SUBHEADING +20% */}
 
-              <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
+              <span className="text-[16px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
                 THE HOUSE
               </span>
 

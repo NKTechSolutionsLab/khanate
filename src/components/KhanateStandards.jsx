@@ -172,7 +172,7 @@ function KhanateStandards() {
 
             <span className="h-px w-9 bg-[#B79A69]" />
 
-            <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#E8DDD3]/85">
+            <span className="text-[18px] font-semibold uppercase tracking-[0.24em] text-[#E8DDD3]/85">
               THE KHĀNATE STANDARD
             </span>
           </div>
@@ -197,7 +197,7 @@ function KhanateStandards() {
             <div className="flex items-center gap-4">
               <span className="h-px w-11 bg-[#B79A69]" />
 
-              <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-[#B79A69]">
+              <span className="text-[16px] font-semibold uppercase tracking-[0.28em] text-[#B79A69]">
                 THE HOUSE PRINCIPLES
               </span>
             </div>
@@ -256,7 +256,7 @@ function KhanateStandards() {
               <div className="mt-12 flex items-center gap-3">
                 <span className="h-px w-8 bg-[#B79A69]/60" />
 
-                <span className="text-[12px] lg:text-[20px] uppercase tracking-[0.2em] text-[#D4C3BA]/45">
+                <span className="text-[10px] lg:text-[20px] uppercase tracking-[0.2em] text-[#D4C3BA]/45">
                   THE STANDARD OF THE HOUSE
                 </span>
               </div>
@@ -284,7 +284,7 @@ function KhanateStandards() {
           {/* principles heading */}
           <div className="flex flex-col gap-4 py-8 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
+              <span className="text-[16px] font-semibold uppercase tracking-[0.24em] text-[#B79A69]">
                 THE HOUSE CODE
               </span>
 

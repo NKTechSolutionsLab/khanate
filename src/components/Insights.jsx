@@ -79,7 +79,7 @@ function Insights() {
 
             <div className="flex items-center gap-3">
 
-              <span className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
+              <span className="text-[18px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
                 INSIGHTS
               </span>
 

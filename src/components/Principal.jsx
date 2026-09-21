@@ -137,7 +137,7 @@ function Principal() {
 
             <span className="h-px w-10 bg-[#B79A69]" />
 
-            <span className="text-[13px] font-semibold uppercase tracking-[0.24em]">
+            <span className="text-[18px] font-semibold uppercase tracking-[0.24em]">
               THE PRINCIPAL
             </span>
 

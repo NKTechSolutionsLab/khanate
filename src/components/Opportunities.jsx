@@ -150,9 +150,9 @@ function Opportunities() {
                 04
               </span>
 
-              <span className="h-px w-10 bg-[#B79A69]" />
+              <span className="h-px w-10 bg-[#B79A69] hidden" />
 
-              <span className="text-[13px] font-semibold uppercase tracking-[0.25em]">
+              <span className="text-[16px] font-semibold uppercase tracking-[0.25em]">
                 SELECTED OPPORTUNITIES
               </span>
             </div>

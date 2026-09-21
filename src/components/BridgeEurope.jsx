@@ -324,7 +324,7 @@ function BridgeEurope() {
             <div className="flex items-center gap-4">
               <span className="h-px w-10 bg-[#B79A69]" />
 
-              <span className="text-[13px] font-semibold uppercase tracking-[0.23em] text-[#B79A69]">
+              <span className="text-[18px] font-semibold uppercase tracking-[0.23em] text-[#B79A69]">
                 BRIDGEEUROPE™
               </span>
             </div>
@@ -445,7 +445,7 @@ function BridgeEurope() {
                       {node.id}
                     </span>
 
-                    <span className="text-[13px] font-semibold uppercase leading-[1.5] tracking-[0.14em] text-[#F5EEE7]/70">
+                    <span className="text-[13px] font-semibold uppercase leading-[1.5] tracking-[0.14em] text-[#F5EEE7]/70 m-2">
                       {node.title}
                     </span>
                   </div>
@@ -456,13 +456,13 @@ function BridgeEurope() {
 
               <div className="absolute bottom-0 left-0 right-0 z-30 border-t border-[#F5EEE7]/10 pt-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[12px] uppercase tracking-[0.18em] text-[#F5EEE7]/38">
+                  <span className="text-[12px] uppercase tracking-[0.18em] text-[#F5EEE7]/75">
                     CAPITAL
                   </span>
 
                   <span className="mx-5 h-px flex-1 bg-[#F5EEE7]/10" />
 
-                  <span className="text-[12px] uppercase tracking-[0.18em] text-[#F5EEE7]/38">
+                  <span className="text-[12px] uppercase tracking-[0.18em] text-[#F5EEE7]/75">
                     EUROPE
                   </span>
                 </div>
@@ -492,14 +492,14 @@ function BridgeEurope() {
                 } lg:border-r lg:first:pl-0 lg:last:border-r-0`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-semibold tracking-[0.2em] text-[#A06A52]">
+                  <span className="text-[13px] font-semibold tracking-[0.2em] text-[#A06A52]">
                     {number}
                   </span>
 
                   <span className="h-px w-7 bg-[#A06A52] transition-all duration-500 group-hover:w-12" />
                 </div>
 
-                <p className="mt-5 max-w-42 text-[12px] font-semibold uppercase leading-[1.6] tracking-[0.13em] text-[#191113]/70">
+                <p className="mt-5 max-w-42 text-[15px] font-semibold uppercase leading-[1.6] tracking-[0.13em] text-[#191113]/70">
                   {title}
                 </p>
               </div>
@@ -543,7 +543,7 @@ function BridgeEurope() {
                   <span className="h-px w-10 bg-[#A06A52]/60 transition-all duration-500 group-hover:w-16 group-hover:bg-[#A06A52]" />
                 </div>
 
-                <span className="mt-7 block text-[12px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
+                <span className="mt-7 block text-[15px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
                   MARKET
                 </span>
 
@@ -570,7 +570,7 @@ function BridgeEurope() {
                   <span className="h-px w-10 bg-[#A06A52]/60 transition-all duration-500 group-hover:w-16 group-hover:bg-[#A06A52]" />
                 </div>
 
-                <span className="mt-7 block text-[12px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
+                <span className="mt-7 block text-[15px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
                   CAPITAL
                 </span>
 
@@ -598,7 +598,7 @@ function BridgeEurope() {
                   <span className="h-px w-10 bg-[#A06A52]/60 transition-all duration-500 group-hover:w-16 group-hover:bg-[#A06A52]" />
                 </div>
 
-                <span className="mt-7 block text-[12px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
+                <span className="mt-7 block text-[15px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
                   CONNECTION
                 </span>
 
@@ -622,7 +622,7 @@ function BridgeEurope() {
         <div className="mx-auto max-w-360 px-6 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36">
           <div className="flex flex-col justify-between gap-10 border-b border-[#F5EEE7]/10 pb-12 lg:flex-row lg:items-end">
             <div className="be-reveal">
-              <span className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#B79A69]">
+              <span className="text-[18px] font-semibold uppercase tracking-[0.22em] text-[#B79A69]">
                 AREAS OF FOCUS
               </span>
 
@@ -634,7 +634,7 @@ function BridgeEurope() {
             </div>
 
             <div className="be-reveal max-w-70">
-              <p className="text-[13px] uppercase leading-[1.8] tracking-[0.12em] text-[#F5EEE7]/35">
+              <p className="text-[16px] uppercase leading-[1.8] tracking-[0.12em] text-[#F5EEE7]/55">
                 INVESTMENT
                 <br />
                 MARKET ACCESS
@@ -652,18 +652,18 @@ function BridgeEurope() {
                 key={item.number}
                 className="be-focus-row group grid gap-5 border-b border-[#F5EEE7]/10 py-7 sm:grid-cols-[70px_270px_1fr] sm:items-center"
               >
-                <span className="text-[11px] tracking-[0.18em] text-[#B79A69]">
+                <span className="text-[15px] tracking-[0.18em] text-[#B79A69]">
                   {item.number}
                 </span>
 
-                <h3 className="font-serif text-[26px] transition-transform duration-500 group-hover:translate-x-2 sm:text-[32px]">
+                <h3 className="font-serif text-[30px] transition-transform duration-500 group-hover:translate-x-2 md:text-[35px]">
                   {item.title}
                 </h3>
 
                 <div className="flex items-center gap-5">
                   <span className="hidden h-px w-8 bg-[#B79A69] sm:block" />
 
-                  <p className="max-w-130 text-[16px] leading-[1.7] text-[#F5EEE7]/55">
+                  <p className="max-w-130 text-[18px] leading-[1.7] text-[#F5EEE7]/55">
                     {item.text}
                   </p>
                 </div>
@@ -683,11 +683,11 @@ function BridgeEurope() {
             {/* HISTORY INTRO */}
 
             <div className="be-reveal lg:sticky lg:top-32 lg:h-fit">
-              <span className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
+              <span className="text-[18px] font-semibold uppercase tracking-[0.22em] text-[#A06A52]">
                 THE HISTORY
               </span>
 
-              <h2 className="mt-5 max-w-85 font-serif text-[3.2rem] leading-[0.9] tracking-[-0.03em] sm:text-[4.7rem]">
+              <h2 className="mt-5 max-w-85 font-serif text-[3rem] leading-[0.9] tracking-[-0.03em] md:text-[4rem]">
                 From
                 <br />
                 Bridge2Europe
@@ -695,7 +695,7 @@ function BridgeEurope() {
                 to today.
               </h2>
 
-              <p className="mt-7 max-w-75 text-[15px] leading-[1.75] text-[#191113]/75">
+              <p className="mt-7 max-w-75 text-[16px] leading-[1.75] text-[#191113]/88">
                 A European platform shaped around relationships,
                 access and cross-border opportunity.
               </p>
@@ -721,11 +721,11 @@ function BridgeEurope() {
 
                   <div className="be-history-card">
                     <div className="be-history-meta">
-                      <span className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
+                      <span className="text-[18px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
                         PLATFORM
                       </span>
 
-                      <span className="mt-2 block text-[10px] uppercase tracking-[0.18em] text-[#191113]">
+                      <span className="mt-2 block text-[12px] uppercase tracking-[0.18em] text-[#191113]">
                         01 / ORIGIN
                       </span>
                     </div>
@@ -741,7 +741,7 @@ function BridgeEurope() {
                     </p>
 
                     <div className="mt-7 border-t border-[#191113]/10 pt-4">
-                      <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#A06A52]">
+                      <span className="text-[18px] font-semibold uppercase tracking-[0.18em] text-[#A06A52]">
                         FOUNDATION
                       </span>
                     </div>
@@ -757,11 +757,11 @@ function BridgeEurope() {
 
                   <div className="be-history-card">
                     <div className="be-history-meta">
-                      <span className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
+                      <span className="text-[18px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
                         LEADERSHIP
                       </span>
 
-                      <span className="mt-2 block text-[10px] uppercase tracking-[0.18em] text-[#191113]">
+                      <span className="mt-2 block text-[12px] uppercase tracking-[0.18em] text-[#191113]">
                         02 / STEWARDSHIP
                       </span>
                     </div>
@@ -799,7 +799,7 @@ function BridgeEurope() {
                         TODAY
                       </span>
 
-                      <span className="mt-2 block text-[10px] uppercase tracking-[0.18em] text-[#191113]">
+                      <span className="mt-2 block text-[12px] uppercase tracking-[0.18em] text-[#191113]">
                         03 / PRESENT
                       </span>
                     </div>

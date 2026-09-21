@@ -109,7 +109,7 @@ export default function Focus() {
 
               <span className="h-px w-10 bg-[#B79572]" />
 
-              <span className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#E9DFD4]">
+              <span className="text-[18px] font-semibold uppercase tracking-[0.24em] text-[#E9DFD4]">
                 OUR FOCUS
               </span>
             </div>
@@ -133,7 +133,7 @@ export default function Focus() {
               meet.
             </h2>
 
-            <p className="mt-7 max-w-[560px] text-[18px] leading-[1.85] text-[#C7B5AC]/70 sm:text-[15px]">
+            <p className="mt-7 max-w-[560px] md:text-[18px] leading-[1.85] text-[#C7B5AC]/70 sm:text-[15px]">
               KHĀNATE operates across a concentrated set of commercial,
               investment and cross-border domains, connecting opportunities
               with the capital, relationships and insight required to move
@@ -175,7 +175,7 @@ export default function Focus() {
                   <span
                     className="
                       font-mono
-                      text-[11px]
+                      text-[15px]
                       tracking-[0.16em]
                       text-[#B79572]/65
                       transition-colors
@@ -199,7 +199,7 @@ export default function Focus() {
                       transition-colors
                       duration-300
                       group-hover:text-[#D8BF8E]
-                      sm:text-[2.15rem]
+                      md:text-[2.15rem]
                     "
                   >
                     {item.title}
@@ -208,7 +208,7 @@ export default function Focus() {
 
                 {/* DESCRIPTION */}
                 <div>
-                  <p className="max-w-[480px] text-[20px] leading-[1.75] text-[#C7B5AC]/65 transition-colors duration-300 group-hover:text-[#D9C9C1] sm:text-[14px]">
+                  <p className="max-w-[480px] md:text-[20px] leading-[1.75] text-[#C7B5AC]/65 transition-colors duration-300 group-hover:text-[#D9C9C1] sm:text-[16px]">
                     {item.description}
                   </p>
                 </div>
