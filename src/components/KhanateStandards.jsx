@@ -321,13 +321,13 @@ function KhanateStandards() {
                   <div className="flex items-center gap-3">
                     <span className="h-px w-7 shrink-0 bg-[#B79A69]/35 transition-all duration-500 group-hover:w-10 group-hover:bg-[#B79A69]" />
 
-                    <h3 className="lg:text-[2rem] font-semibold uppercase tracking-[0.23em] text-[#D4C3BA]/55 transition-colors duration-300 group-hover:text-[#D8BF8E] sm:text-[1.5em]">
+                    <h3 className="lg:text-[2rem]  font-semibold uppercase tracking-[0.23em] text-[#D4C3BA]/55 transition-colors duration-300 group-hover:text-[#D8BF8E] sm:text-[1.5em]">
                       {standard.title}
                     </h3>
                   </div>
 
                   {/* statement */}
-                  <p className="font-serif text-[1.65rem] leading-none tracking-[-0.025em] text-[#F1E7DC]/85 transition-transform duration-500 group-hover:translate-x-1 sm:text-[1.9rem] lg:text-[2.1rem] mx-20">
+                  <p className="font-serif text-[1.65rem] w-full leading-none tracking-[-0.025em] text-[#F1E7DC]/85 transition-transform duration-500 group-hover:translate-x-1 sm:text-[1.9rem] lg:text-[2.1rem] mx-20">
                     {standard.text}
                   </p>
 
