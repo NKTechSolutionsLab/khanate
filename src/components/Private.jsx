@@ -304,7 +304,7 @@ function Private() {
                   </span>
                 </div>
 
-                <p className="mt-4 max-w-[380px] text-[20px] leading-[1.75] text-[#F5EEE7]/50 sm:text-[16px]">
+                <p className="mt-4 max-w-[380px] lg:text-[17px]  leading-[1.75] text-[#F5EEE7]/50 text-[15px]">
                   {item.text}
                 </p>
               </div>
