@@ -99,7 +99,7 @@ function Nav({ animate }) {
   <img
     src={logo}
     alt="KHĀNATE"
-    className="h-[5.25rem] w-[14rem] max-w-none object-cover object-center"
+    className="h-[6.7rem] w-[11rem] max-w-none object-cover object-center"
   />
 </a>
 
@@ -110,7 +110,7 @@ function Nav({ animate }) {
               <a
                 key={item.label}
                 href={item.href}
-                className="nav-link relative translate-y-3.5 whitespace-nowrap py-2 text-[9.6px] font-semibold uppercase tracking-[0.16em] text-[#F5EEE7]/90 opacity-0 transition-colors duration-300 hover:text-[#B79A69] xl:text-[10.8px]"
+                className="nav-link relative translate-y-3.5 whitespace-nowrap py-2 text-[13.5px] font-stretch-90% uppercase tracking-[0.16em] text-[#F5EEE7]/90 opacity-0 transition-colors duration-300 hover:text-[#B79A69] "
               >
                 {item.label}
 
@@ -171,7 +171,7 @@ function Nav({ animate }) {
         <div className="flex min-h-screen flex-col px-6 pb-6 pt-28 sm:px-10">
 
           <div className="mb-7 flex items-center gap-4">
-            <span className="text-[9.6px] font-semibold uppercase tracking-[0.22em] text-[#B79A69]">
+            <span className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#B79A69]">
               Navigation
             </span>
 
@@ -190,7 +190,7 @@ function Nav({ animate }) {
                   0{index + 1}
                 </span>
 
-                <span className="text-[13.2px] font-semibold uppercase tracking-[0.17em]">
+                <span className="text-[14px] font-semibold uppercase tracking-[0.17em]">
                   {item.label}
                 </span>
 
