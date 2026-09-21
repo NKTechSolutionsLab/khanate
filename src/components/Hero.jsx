@@ -194,7 +194,7 @@ function Hero({ animate }) {
 
             {/* Eyebrow */}
             <div className="hero-eyebrow mb-5 flex translate-y-6 items-center gap-4 opacity-0">
-              <span className="sm:hidden h-px w-8 shrink-0 bg-[#B79A69]" />
+              <span className="hidden h-px w-8 shrink-0 bg-[#B79A69]" />
 
               <p className="md:text-[15px] text-[12px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
                 PRIVATE CAPITAL. STRATEGIC ACCESS. EUROPEAN OPPORTUNITIES.
