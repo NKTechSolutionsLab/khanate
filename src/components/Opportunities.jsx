@@ -173,7 +173,7 @@ function Opportunities() {
               </span>
             </h2>
 
-            <p className="max-w-[370px] text-[16px] leading-[1.85] text-[#C5B2AA] sm:text-[17px]">
+            <p className="max-w-[370px] text-[17px] leading-[1.85] text-[#C5B2AA] sm:text-[17px]">
               A selective presentation of opportunities where capital,
               relationships and European access create a credible basis
               for engagement.
@@ -196,7 +196,7 @@ function Opportunities() {
             <div className="border-t border-[#B79A69]/25">
 
               <div className="border-b border-[#B79A69]/15 py-5">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.22em] text-[#8E7875]">
+                <span className="text-[14px] font-semibold uppercase tracking-[0.22em] text-[#8E7875]">
                   AVAILABLE ENTRY POINTS
                 </span>
               </div>
@@ -281,7 +281,8 @@ function Opportunities() {
 
                             <span
                               className={`
-                                text-[12px]
+                              
+                                text-[14px]
                                 font-semibold
                                 uppercase
                                 tracking-[0.2em]
@@ -309,7 +310,8 @@ function Opportunities() {
                               transition-all
                               duration-500
                               sm:mt-5
-                              sm:text-[2.2rem]
+                              lg:text-[1.7em]
+                              sm:text-[2rem]
                               ${
                                 isActive
                                   ? "text-[#F5EEE7]"
@@ -376,7 +378,7 @@ function Opportunities() {
                           {/* content */}
                           <div className="p-6">
 
-                            <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#191113]/40">
+                            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#191113]">
                               SELECTED OPPORTUNITY
                             </span>
 
@@ -384,7 +386,7 @@ function Opportunities() {
                               {active.title}
                             </h3>
 
-                            <p className="mt-5 text-[14px] leading-[1.75] text-[#191113]/60">
+                            <p className="mt-5 md:text-[14px] sm:text-[22px] leading-[1.75] text-[#191113]">
                               {active.description}
                             </p>
 
@@ -392,21 +394,21 @@ function Opportunities() {
                             <div className="mt-7 grid grid-cols-2 gap-5 border-t border-[#191113]/12 pt-5">
 
                               <div>
-                                <span className="block text-[8px] font-semibold uppercase tracking-[0.18em] text-[#191113]/35">
+                                <span className="block md:text-[8px] text-[10px] font-semibold uppercase tracking-[0.18em] text-[#191113]">
                                   LOCATION
                                 </span>
 
-                                <span className="mt-2 block text-[10px] font-semibold uppercase tracking-[0.12em] text-[#191113]/70">
+                                <span className="mt-2 block md:text-[10px] text-[12px] font-semibold uppercase tracking-[0.12em] text-[#191113]/70">
                                   {active.location}
                                 </span>
                               </div>
 
                               <div>
-                                <span className="block text-[8px] font-semibold uppercase tracking-[0.18em] text-[#191113]/35">
+                                <span className="block md:text-[8px] text-[10px] font-semibold uppercase tracking-[0.18em] text-[#191113]">
                                   ACCESS
                                 </span>
 
-                                <span className="mt-2 block text-[10px] font-semibold uppercase tracking-[0.12em] text-[#191113]/70">
+                                <span className="mt-2 block md:text-[8px] text-[10px] font-semibold uppercase tracking-[0.12em] text-[#191113]/80">
                                   {active.access}
                                 </span>
                               </div>
@@ -459,12 +461,12 @@ function Opportunities() {
                 <div className="flex items-center gap-3">
                   <span className="h-px w-8 bg-[#B79A69]" />
 
-                  <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
+                  <span className="text-[15px] my-2 font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
                     QUALIFIED ACCESS
                   </span>
                 </div>
 
-                <p className="mt-4 max-w-[360px] text-[16px] leading-[1.75] text-[#F5EEE7]/45">
+                <p className="mt-4 max-w-[360px] text-[18px] leading-[1.75] text-[#F5EEE7]/45">
                   Opportunity information is shared selectively following
                   an initial qualification discussion.
                 </p>
@@ -542,7 +544,7 @@ function Opportunities() {
                   </div>
 
                   {/* center */}
-                  <div className="max-w-[620px]">
+                  <div className="max-w-[620px] my-5">
 
                     <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#191113]/70">
                       SELECTED OPPORTUNITY
@@ -639,11 +641,11 @@ function Opportunities() {
 
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
-            <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
+            <span className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
               KHĀNATE · PRIVATE CAPITAL · EUROPE
             </span>
 
-            <span className="max-w-[470px] text-[12px] uppercase leading-[1.7] tracking-[0.14em] text-[#F5EEE7]/45 sm:text-right">
+            <span className="max-w-[470px] text-[13px] w-full uppercase leading-[1.7] tracking-[0.14em] text-[#F5EEE7]/45 sm:text-right">
               Access is selective and subject to initial qualification.
             </span>
 
