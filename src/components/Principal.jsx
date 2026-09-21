@@ -128,9 +128,7 @@ function Principal() {
         ========================================================== */}
 
         <div className="mb-9 flex items-center justify-between lg:mb-10">
-
           <div className="flex items-center gap-4">
-
             <span className="font-mono text-[11px] tracking-[0.16em] text-[#A06A52]">
               06
             </span>
@@ -140,10 +138,7 @@ function Principal() {
             <span className="text-[18px] font-semibold uppercase tracking-[0.24em]">
               THE PRINCIPAL
             </span>
-
           </div>
-
-
         </div>
 
 
@@ -154,7 +149,7 @@ function Principal() {
         <div className="relative lg:min-h-[670px]">
 
           {/* =======================================================
-              MAROON BACKDROP
+              MAROON BACKDROP — DESKTOP ONLY
           ======================================================== */}
 
           <div
@@ -184,7 +179,9 @@ function Principal() {
               h-[500px]
               overflow-hidden
               bg-[#DED0C7]
+
               sm:h-[585px]
+
               lg:absolute
               lg:left-[7%]
               lg:top-0
@@ -192,7 +189,6 @@ function Principal() {
               lg:w-[42%]
             "
           >
-
             <img
               ref={imageInnerRef}
               src={img}
@@ -208,29 +204,27 @@ function Principal() {
                 duration-[1200ms]
                 ease-out
                 group-hover:scale-[1.02]
+
                 lg:object-center
               "
             />
 
-            {/* image wash */}
+            {/* IMAGE WASH */}
 
             <div className="absolute inset-0 bg-gradient-to-t from-[#130207]/80 via-transparent to-transparent" />
 
 
-            {/* portrait identity */}
+            {/* PORTRAIT IDENTITY */}
 
             <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-
               <div className="flex items-end justify-between gap-5">
 
                 <div>
-
                   <span className="text-[14px] font-semibold uppercase tracking-[0.22em] text-[#D8BF8E] sm:text-[11px]">
                     FOUNDER & PRINCIPAL
                   </span>
 
                   <div className="mt-3 h-px w-10 bg-[#B79A69]" />
-
                 </div>
 
                 <span className="font-mono text-[10px] tracking-[0.16em] text-[#F5EEE7]/45">
@@ -238,9 +232,7 @@ function Principal() {
                 </span>
 
               </div>
-
             </div>
-
           </div>
 
 
@@ -253,49 +245,68 @@ function Principal() {
             className="
               relative
               z-30
+
               mt-7
+              border-b
+              border-[#191113]/12
+              pb-7
+
               lg:absolute
               lg:right-0
               lg:top-0
               lg:mt-0
               lg:w-[51%]
+              lg:border-0
+              lg:pb-0
               lg:pl-3
             "
           >
+            <div className="flex items-end justify-between gap-4">
 
-            <span
-              className="
-                block
-                font-serif
-                text-[3.5rem]
-                leading-[0.81]
-                tracking-[-0.06em]
-                text-[#260506]
-                sm:text-[4.45rem]
-                lg:text-[5.25rem]
-                xl:text-[5.8rem]
-              "
-            >
-              Shehzad
-            </span>
+              <div>
+                <span
+                  className="
+                    block
+                    font-serif
+                    text-[3.5rem]
+                    leading-[0.81]
+                    tracking-[-0.06em]
+                    text-[#260506]
 
-            <span
-              className="
-                ml-[0.64em]
-                block
-                font-serif
-                text-[3.5rem]
-                leading-[0.81]
-                tracking-[-0.06em]
-                text-[#A06A52]
-                sm:text-[4.45rem]
-                lg:text-[5.25rem]
-                xl:text-[5.8rem]
-              "
-            >
-              Khan
-            </span>
+                    sm:text-[4.45rem]
+                    lg:text-[5.25rem]
+                    xl:text-[5.8rem]
+                  "
+                >
+                  Shehzad
+                </span>
 
+                <span
+                  className="
+                    ml-[0.64em]
+                    block
+                    font-serif
+                    text-[3.5rem]
+                    leading-[0.81]
+                    tracking-[-0.06em]
+                    text-[#A06A52]
+
+                    sm:text-[4.45rem]
+                    lg:text-[5.25rem]
+                    xl:text-[5.8rem]
+                  "
+                >
+                  Khan
+                </span>
+              </div>
+
+              {/* MOBILE EDITORIAL INDEX */}
+
+              <span className="mb-1 font-mono text-[10px] tracking-[0.16em] text-[#191113]/35 lg:hidden">
+                01 / 01
+              </span>
+
+            </div>
           </div>
 
 
@@ -308,14 +319,16 @@ function Principal() {
             className="
               relative
               z-30
-              mt-9
+              mt-8
               w-full
               bg-[#260506]
               px-7
               py-8
               text-[#F1E7DC]
+
               sm:px-9
               sm:py-10
+
               lg:absolute
               lg:right-0
               lg:top-[166px]
@@ -327,7 +340,7 @@ function Principal() {
             "
           >
 
-            {/* top marker */}
+            {/* TOP MARKER */}
 
             <div className="flex items-center gap-4">
 
@@ -340,7 +353,7 @@ function Principal() {
             </div>
 
 
-            {/* Main heading */}
+            {/* MAIN HEADING */}
 
             <h2
               className="
@@ -350,6 +363,7 @@ function Principal() {
                 text-[2.7rem]
                 leading-[0.92]
                 tracking-[-0.05em]
+
                 sm:text-[3.4rem]
                 lg:text-[3.95rem]
               "
@@ -364,13 +378,119 @@ function Principal() {
             </h2>
 
 
-            {/* Body */}
+            {/* =====================================================
+                MOBILE CONTENT
+                ===================================================== */}
 
-            <div className="mt-7 grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:gap-8">
+            <div className="mt-7 lg:hidden">
+
+              <div className="border-t border-[#E8DDD3]/10 pt-6">
+
+                <p className="text-[17px] leading-[1.75] text-[#D4C3BA]/75">
+                  KHĀNATE was founded on the belief that meaningful
+                  opportunities are built through trusted relationships,
+                  informed perspective and disciplined access.
+                </p>
+
+                <p className="mt-4 text-[18px] leading-[1.75] text-[#D4C3BA]/75">
+                  As Founder and Principal, the focus is on connecting
+                  capital, businesses and strategic relationships across
+                  Europe and international markets — identifying
+                  opportunities where alignment can create lasting value.
+                </p>
+
+              </div>
+
+
+              {/* MOBILE APPROACH */}
+
+              <div className="mt-8 border-t border-[#E8DDD3]/10 pt-6">
+
+                <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]">
+                  PRINCIPAL'S APPROACH
+                </span>
+
+                <div className="mt-5">
+
+                  <div className="flex items-center justify-between border-b border-[#E8DDD3]/10 py-3">
+
+                    <span className="font-mono text-[10px] tracking-[0.14em] text-[#B79A69]/65">
+                      01
+                    </span>
+
+                    <p className="font-serif text-[1.45rem] leading-none text-[#F1E7DC]">
+                      Selective relationships.
+                    </p>
+
+                  </div>
+
+                  <div className="flex items-center justify-between border-b border-[#E8DDD3]/10 py-3">
+
+                    <span className="font-mono text-[10px] tracking-[0.14em] text-[#B79A69]/65">
+                      02
+                    </span>
+
+                    <p className="font-serif text-[1.45rem] leading-none text-[#F1E7DC]/85">
+                      Informed decisions.
+                    </p>
+
+                  </div>
+
+                  <div className="flex items-center justify-between py-3">
+
+                    <span className="font-mono text-[10px] tracking-[0.14em] text-[#B79A69]/65">
+                      03
+                    </span>
+
+                    <p className="font-serif text-[1.45rem] leading-none text-[#D8BF8E]">
+                      Long-term alignment.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              {/* MOBILE IDENTITY STRIP */}
+
+              <div className="mt-5 border-t border-[#E8DDD3]/10 pt-5">
+
+                <div className="flex items-center justify-between">
+
+                  <span className="text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[#F1E7DC]/60">
+                    CAPITAL
+                  </span>
+
+                  <span className="h-3 w-px bg-[#F1E7DC]/15" />
+
+                  <span className="text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[#F1E7DC]/60">
+                    CONNECTIONS
+                  </span>
+
+                  <span className="h-3 w-px bg-[#F1E7DC]/15" />
+
+                  <span className="text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[#F1E7DC]/60">
+                    OPPORTUNITY
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* =====================================================
+                DESKTOP CONTENT
+                ===================================================== */}
+
+            <div className="mt-7 hidden gap-6 lg:grid lg:grid-cols-[1.25fr_0.75fr] lg:gap-8">
 
               <div>
 
-                <p className="lg:text-[18px] leading-[1.75] text-[#D4C3BA]/75 text-[17px]">
+                <p className="text-[17px] leading-[1.75] text-[#D4C3BA]/75 lg:text-[18px]">
                   KHĀNATE was founded on the belief that meaningful
                   opportunities are built through trusted relationships,
                   informed perspective and disciplined access.
@@ -385,8 +505,6 @@ function Principal() {
 
               </div>
 
-
-              {/* Approach */}
 
               <div className="border-l border-[#E8DDD3]/10 pl-6">
 
@@ -415,9 +533,9 @@ function Principal() {
             </div>
 
 
-            {/* identity strip */}
+            {/* DESKTOP IDENTITY STRIP */}
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-[#E8DDD3]/10 pt-5">
+            <div className="mt-8 hidden flex-wrap items-center gap-x-5 gap-y-3 border-t border-[#E8DDD3]/10 pt-5 lg:flex">
 
               <span className="text-[10.5px] font-semibold uppercase tracking-[0.2em] text-[#F1E7DC]/60">
                 CAPITAL
@@ -453,12 +571,13 @@ function Principal() {
             border-t
             border-[#191113]/12
             pt-6
+
             lg:mt-5
             lg:pt-5
           "
         >
 
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between mt-8 lg:mt-26">
+          <div className="mt-8 flex flex-col gap-5 lg:mt-26 lg:flex-row lg:items-end lg:justify-between">
 
             <p
               className="
@@ -467,6 +586,7 @@ function Principal() {
                 text-[1.85rem]
                 leading-[1.02]
                 tracking-[-0.03em]
+
                 sm:text-[2.2rem]
                 lg:text-[2.35rem]
               "
@@ -477,8 +597,6 @@ function Principal() {
                 trusted relationships.
               </span>
             </p>
-
-         
 
           </div>
 

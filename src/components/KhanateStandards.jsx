@@ -327,7 +327,7 @@ function KhanateStandards() {
                   </div>
 
                   {/* statement */}
-                  <p className="font-serif text-[1.65rem] w-full leading-none tracking-[-0.025em] text-[#F1E7DC]/85 transition-transform duration-500 group-hover:translate-x-1 sm:text-[1.9rem] lg:text-[2.1rem] ">
+                  <p className="font-serif text-[1.65rem] w-full leading-none tracking-[-0.025em] text-[#F1E7DC]/85 transition-transform duration-500 group-hover:translate-x-1 sm:text-[1.9rem] lg:text-[2.1rem] lg:mx-20">
                     {standard.text}
                   </p>
 
