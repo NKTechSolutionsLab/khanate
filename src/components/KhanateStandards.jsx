@@ -241,14 +241,14 @@ function KhanateStandards() {
                 </span>
               </div>
 
-              <p className="max-w-[450px] font-serif text-[1.8rem] leading-[1.05] tracking-[-0.03em] text-[#F1E7DC]/90 sm:text-[2.15rem] lg:text-[2.35rem]">
+              <p className="max-w-[450px] font-serif text-[1.8rem] leading-[1.05] tracking-[-0.03em] text-[#F1E7DC]/90 sm:text-[2.15rem] lg:text-[2.5rem]">
                 Not every opportunity deserves attention.
                 <span className="text-[#D4C3BA]/50">
                   {" "}The right ones deserve depth.
                 </span>
               </p>
 
-              <p className="mt-7 max-w-[390px] text-[20px] leading-[1.8] text-[#D4C3BA]/52 sm:text-[15px]">
+              <p className="mt-7 max-w-[390px] lg:text-[21px] leading-[1.8] text-[#F1E7DC] sm:text-[15px]">
                 These principles shape how KHĀNATE evaluates opportunities,
                 relationships and long-term reputation.
               </p>
@@ -256,7 +256,7 @@ function KhanateStandards() {
               <div className="mt-12 flex items-center gap-3">
                 <span className="h-px w-8 bg-[#B79A69]/60" />
 
-                <span className="text-[12px] uppercase tracking-[0.2em] text-[#D4C3BA]/45">
+                <span className="text-[12px] lg:text-[20px] uppercase tracking-[0.2em] text-[#D4C3BA]/45">
                   THE STANDARD OF THE HOUSE
                 </span>
               </div>
@@ -321,13 +321,13 @@ function KhanateStandards() {
                   <div className="flex items-center gap-3">
                     <span className="h-px w-7 shrink-0 bg-[#B79A69]/35 transition-all duration-500 group-hover:w-10 group-hover:bg-[#B79A69]" />
 
-                    <h3 className="text-[2rem] font-semibold uppercase tracking-[0.23em] text-[#D4C3BA]/55 transition-colors duration-300 group-hover:text-[#D8BF8E] sm:text-[12px]">
+                    <h3 className="lg:text-[2rem] font-semibold uppercase tracking-[0.23em] text-[#D4C3BA]/55 transition-colors duration-300 group-hover:text-[#D8BF8E] sm:text-[1.5em]">
                       {standard.title}
                     </h3>
                   </div>
 
                   {/* statement */}
-                  <p className="font-serif text-[1.65rem] leading-none tracking-[-0.025em] text-[#F1E7DC]/85 transition-transform duration-500 group-hover:translate-x-1 sm:text-[1.9rem] lg:text-[2.1rem]">
+                  <p className="font-serif text-[1.65rem] leading-none tracking-[-0.025em] text-[#F1E7DC]/85 transition-transform duration-500 group-hover:translate-x-1 sm:text-[1.9rem] lg:text-[2.1rem] mx-20">
                     {standard.text}
                   </p>
 
