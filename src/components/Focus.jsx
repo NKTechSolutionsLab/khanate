@@ -133,7 +133,7 @@ export default function Focus() {
               meet.
             </h2>
 
-            <p className="mt-7 max-w-[560px] md:text-[18px] leading-[1.85] text-[#C7B5AC]/70 sm:text-[15px]">
+            <p className="mt-7 max-w-[560px] md:text-[18px] leading-[1.85] text-[#C7B5AC]/70 text-[17px]">
               KHĀNATE operates across a concentrated set of commercial,
               investment and cross-border domains, connecting opportunities
               with the capital, relationships and insight required to move
@@ -175,7 +175,7 @@ export default function Focus() {
                   <span
                     className="
                       font-mono
-                      text-[15px]
+                      text-[17px]
                       tracking-[0.16em]
                       text-[#B79572]/65
                       transition-colors
@@ -208,7 +208,7 @@ export default function Focus() {
 
                 {/* DESCRIPTION */}
                 <div>
-                  <p className="max-w-[480px] md:text-[20px] leading-[1.75] text-[#C7B5AC]/65 transition-colors duration-300 group-hover:text-[#D9C9C1] sm:text-[16px]">
+                  <p className="max-w-[480px] md:text-[20px] leading-[1.75] text-[#C7B5AC]/65 transition-colors duration-300 group-hover:text-[#D9C9C1] text-[18px]">
                     {item.description}
                   </p>
                 </div>
