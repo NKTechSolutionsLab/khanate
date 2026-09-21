@@ -199,7 +199,7 @@ function Private() {
             </span>
           </h2>
 
-          <p className="mx-auto mt-9 max-w-[610px] lg:text-[17px] leading-[1.8] text-[#F5EEE7]/70 sm:text-[15px]">
+          <p className="mx-auto mt-9 max-w-[610px] lg:text-[20px] leading-[1.8] text-[#F5EEE7]/70 sm:text-[15px]">
             Introduce your area of interest, geography and context.
             Where there is a credible basis for collaboration, the
             conversation can move forward privately.
@@ -299,12 +299,12 @@ function Private() {
 
                   <span className="h-px w-5 bg-[#B79A69]/30" />
 
-                  <span className="text-[15px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]/80">
+                  <span className="text-[18px] font-semibold uppercase tracking-[0.2em] text-[#B79A69]/80">
                     {item.label}
                   </span>
                 </div>
 
-                <p className="mt-4 max-w-[380px] lg:text-[17px]  leading-[1.75] text-[#F5EEE7]/50 text-[15px]">
+                <p className="mt-4 max-w-[380px] lg:text-[20px]  leading-[1.75] text-[#F5EEE7]/50 text-[15px]">
                   {item.text}
                 </p>
               </div>

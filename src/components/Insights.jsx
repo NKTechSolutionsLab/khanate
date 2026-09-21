@@ -134,68 +134,71 @@ function Insights() {
                 itemsRef.current[index] = el;
               }}
               className={`
-                group
-                border-b
-                border-[#191113]/20
-                px-0
-                py-6
-                sm:min-h-[225px]
-                sm:px-6
-                sm:py-7
-                ${
-                  index > 0
-                    ? "sm:border-l sm:border-[#191113]/20"
-                    : ""
-                }
-                ${
-                  index === 0
-                    ? "sm:pl-0"
-                    : ""
-                }
-                ${
-                  index === insights.length - 1
-                    ? "sm:pr-0"
-                    : ""
-                }
-              `}
-            >
+    group
+    mb-4
+    overflow-hidden
+    rounded-[2px]
+    border
+    border-[#191113]/12
+    bg-[#F0E7DE]
+    px-4
+    py-4
+    shadow-[0_8px_30px_rgba(25,17,19,0.04)]
+    last:mb-0
 
-              <div className="grid grid-cols-[100px_1fr] gap-5 sm:block">
+    sm:mb-0
+    sm:rounded-none
+    sm:border-0
+    sm:border-b
+    sm:border-[#191113]/20
+    sm:bg-transparent
+    sm:px-6
+    sm:py-7
+    sm:shadow-none
+
+    ${index > 0
+                  ? "sm:border-l sm:border-[#191113]/20"
+                  : ""
+                }
+
+    ${index === 0
+                  ? "sm:pl-0"
+                  : ""
+                }
+
+    ${index === insights.length - 1
+                  ? "sm:pr-0"
+                  : ""
+                }
+  `}
+            >
+              <div className="grid grid-cols-1 gap-0 sm:block">
 
                 {/* IMAGE */}
-
-                <div className="aspect-[4/3] overflow-hidden sm:aspect-[1.5/1]">
-
+                <div className="aspect-[16/9] overflow-hidden sm:aspect-[1.5/1]">
                   <img
                     src={item.img}
                     alt=""
                     aria-hidden="true"
                     className="
-                      h-full
-                      w-full
-                      object-cover
-                      transition-transform
-                      duration-700
-                      group-hover:scale-[1.04]
-                    "
+          h-full
+          w-full
+          object-cover
+          transition-transform
+          duration-700
+          group-hover:scale-[1.04]
+        "
                   />
-
                 </div>
 
-
                 {/* CONTENT */}
-
-                <div className="flex flex-col justify-between sm:mt-5">
+                <div className="flex flex-col justify-between pt-4 sm:mt-5 sm:pt-0">
 
                   <div>
-
-                    {/* INCREASED SIZE + VISIBILITY */}
 
                     <span className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#A06A52]">
                       {item.category}
                     </span>
-
-                    {/* KEPT SAME SIZE */}
 
                     <h3 className="mt-2 max-w-[300px] font-serif text-[1.35rem] leading-[1.05] tracking-[-0.02em] sm:text-[1.5rem]">
                       {item.title}
@@ -203,16 +206,11 @@ function Insights() {
 
                   </div>
 
-
-                  <div className="mt-4 flex items-center justify-between sm:mt-6">
-
-                    {/* INCREASED SIZE + VISIBILITY */}
+                  <div className="mt-5 flex items-center justify-between border-t border-[#191113]/10 pt-3 sm:mt-6 sm:border-0 sm:pt-0">
 
                     <span className="text-[11px] uppercase tracking-[0.16em] text-[#191113]/70">
                       ARTICLE
                     </span>
-
-                    {/* INCREASED SIZE + VISIBILITY */}
 
                     <span className="text-[17px] font-light text-[#191113]/70 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#A06A52]">
                       →
@@ -223,7 +221,6 @@ function Insights() {
                 </div>
 
               </div>
-
             </article>
           ))}
 
