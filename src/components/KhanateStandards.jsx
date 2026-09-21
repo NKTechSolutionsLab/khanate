@@ -177,7 +177,7 @@ function KhanateStandards() {
             </span>
           </div>
 
-          <span className="hidden text-[15px] uppercase tracking-[0.2em] text-[#D4C3BA]/30 sm:block">
+          <span className="hidden text-[12px] uppercase tracking-[0.2em] text-[#D4C3BA]/30 sm:block">
             HOUSE PRINCIPLES
           </span>
         </div>
