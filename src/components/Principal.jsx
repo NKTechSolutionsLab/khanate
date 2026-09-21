@@ -225,7 +225,7 @@ function Principal() {
 
                 <div>
 
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#D8BF8E] sm:text-[11px]">
+                  <span className="text-[14px] font-semibold uppercase tracking-[0.22em] text-[#D8BF8E] sm:text-[11px]">
                     FOUNDER & PRINCIPAL
                   </span>
 
@@ -370,13 +370,13 @@ function Principal() {
 
               <div>
 
-                <p className="text-[15px] leading-[1.75] text-[#D4C3BA]/75 sm:text-[16px]">
+                <p className="lg:text-[18px] leading-[1.75] text-[#D4C3BA]/75 text-[17px]">
                   KHĀNATE was founded on the belief that meaningful
                   opportunities are built through trusted relationships,
                   informed perspective and disciplined access.
                 </p>
 
-                <p className="mt-4 text-[15px] leading-[1.75] text-[#D4C3BA]/75 sm:text-[16px]">
+                <p className="mt-4 text-[18px] leading-[1.75] text-[#D4C3BA]/75 lg:text-[17px]">
                   As Founder and Principal, the focus is on connecting
                   capital, businesses and strategic relationships across
                   Europe and international markets — identifying
@@ -396,15 +396,15 @@ function Principal() {
 
                 <div className="mt-5 space-y-3">
 
-                  <p className="font-serif text-[1.32rem] leading-none text-[#F1E7DC]">
+                  <p className="font-serif text-[1.45rem] leading-none text-[#F1E7DC]">
                     Selective relationships.
                   </p>
 
-                  <p className="font-serif text-[1.32rem] leading-none text-[#F1E7DC]/85">
+                  <p className="font-serif text-[1.45rem] leading-none text-[#F1E7DC]/85">
                     Informed decisions.
                   </p>
 
-                  <p className="font-serif text-[1.32rem] leading-none text-[#D8BF8E]">
+                  <p className="font-serif text-[1.45rem] leading-none text-[#D8BF8E]">
                     Long-term alignment.
                   </p>
 
@@ -458,7 +458,7 @@ function Principal() {
           "
         >
 
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between mt-12">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between mt-8 lg:mt-26">
 
             <p
               className="
