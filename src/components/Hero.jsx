@@ -194,9 +194,9 @@ function Hero({ animate }) {
 
             {/* Eyebrow */}
             <div className="hero-eyebrow mb-5 flex translate-y-6 items-center gap-4 opacity-0">
-              <span className="h-px w-8 shrink-0 bg-[#B79A69]" />
+              <span className="sm:hidden h-px w-8 shrink-0 bg-[#B79A69]" />
 
-              <p className="text-[15px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
+              <p className="md:text-[15px] text-[12px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
                 PRIVATE CAPITAL. STRATEGIC ACCESS. EUROPEAN OPPORTUNITIES.
               </p>
             </div>
@@ -208,7 +208,7 @@ function Hero({ animate }) {
                 max-w-162.5
                 translate-y-6
                 font-serif
-                text-[2.65rem]
+                text-[2.5rem]
                 font-medium
                 leading-[0.94]
                 tracking-tight
@@ -235,7 +235,7 @@ function Hero({ animate }) {
                 mt-5
                 max-w-97.5
                 translate-y-6
-                text-[14.52px]
+                text-[16px]
                 leading-[1.55]
                 text-[#F5EEE7]/80
                 opacity-0
@@ -265,7 +265,7 @@ function Hero({ animate }) {
                 border-[#B79A69]
                 bg-[#5A101C]/80
                 px-5
-                text-[10.56px]
+                text-[11px]
                 font-semibold
                 uppercase
                 tracking-[0.17em]
@@ -297,7 +297,7 @@ function Hero({ animate }) {
 
             {/* Pagination */}
             <div className="hero-pagination mt-7 flex translate-y-6 items-center gap-4 opacity-0 lg:mt-8">
-              <span className="text-[11px] font-semibold tracking-[0.15em] text-[#B79A69]">
+              <span className="text-[15px] font-semibold tracking-[0.15em] text-[#B79A69]">
                 01 / 06
               </span>
 
@@ -311,7 +311,7 @@ function Hero({ animate }) {
               <p
                 className="
                   max-w-26.25
-                  text-[11px]
+                  text-[13px]
                   font-semibold
                   uppercase
                   leading-loose
