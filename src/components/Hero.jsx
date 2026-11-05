@@ -193,13 +193,13 @@ function Hero({ animate }) {
           <div className="w-full max-w-162.5">
 
             {/* Eyebrow */}
-            <div className="hero-eyebrow mb-5 flex translate-y-6 items-center gap-4 opacity-0">
+            {/* <div className="hero-eyebrow mb-5 flex translate-y-6 items-center gap-4 opacity-0">
               <span className="hidden h-px w-8 shrink-0 bg-[#B79A69]" />
 
               <p className="md:text-[15px] text-[12px] font-semibold uppercase tracking-[0.18em] text-[#B79A69]">
                 PRIVATE CAPITAL. STRATEGIC ACCESS. EUROPEAN OPPORTUNITIES.
               </p>
-            </div>
+            </div> */}
 
             {/* Heading */}
             <h1
@@ -245,8 +245,7 @@ function Hero({ animate }) {
                 lg:text-[17.16px]
               "
             >
-              A discreet European platform connecting capital, enterprise and
-              selected opportunities.
+              A discreet European platform for capital, enterprise and strategic opportunities.
             </p>
 
             {/* CTA */}
@@ -296,18 +295,18 @@ function Hero({ animate }) {
             </a>
 
             {/* Pagination */}
-            <div className="hero-pagination mt-7 flex translate-y-6 items-center gap-4 opacity-0 lg:mt-8">
+            {/* <div className="hero-pagination mt-7 flex translate-y-6 items-center gap-4 opacity-0 lg:mt-8">
               <span className="text-[15px] font-semibold tracking-[0.15em] text-[#B79A69]">
                 01 / 06
               </span>
 
               <span className="h-px w-14 bg-[#B79A69]/70" />
-            </div>
+            </div> */}
           </div>
 
           {/* Desktop Statement */}
           <div className="hero-statement-desktop mr-8 hidden translate-y-6 opacity-0 lg:block xl:mr-12">
-            <div className="border-l border-[#B79A69]/50 pl-6">
+            {/* <div className="border-l border-[#B79A69]/50 pl-6">
               <p
                 className="
                   max-w-26.25
@@ -329,13 +328,13 @@ function Hero({ animate }) {
               </p>
 
               <span className="mt-5 block h-px w-9 bg-[#B79A69]" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
       {/* Mobile Statement */}
-      <div className="hero-statement-mobile absolute bottom-7 left-6 z-10 translate-y-6 opacity-0 lg:hidden sm:left-8">
+      {/* <div className="hero-statement-mobile absolute bottom-7 left-6 z-10 translate-y-6 opacity-0 lg:hidden sm:left-8">
         <div className="border-l border-[#B79A69]/60 pl-3">
           <p className="text-[7.92px] font-semibold uppercase leading-[1.85] tracking-[0.2em] text-[#F5EEE7]/80 sm:text-[9.24px]">
             QUIET
@@ -349,7 +348,7 @@ function Hero({ animate }) {
 
           <span className="mt-3 block h-px w-7 bg-[#B79A69]" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import vid from "../videos/intro_video1.mp4";
@@ -131,14 +132,20 @@ function IntroVideo({ onComplete }) {
         controls={false}
         disablePictureInPicture
         className="
-          h-auto
-          w-full
-          max-h-full
-          object-contain
-          md:h-full
-          md:w-full
-          md:object-cover
-        "
+  h-auto
+  w-full
+  max-h-full
+  object-contain
+
+  md:h-full
+  md:w-full
+  md:object-cover
+
+  lg:h-[calc(100dvh-32px)]
+  lg:w-[calc(100vw-32px)]
+  lg:rounded-2xl
+  lg:object-contain
+"
       />
     </div>
   );
